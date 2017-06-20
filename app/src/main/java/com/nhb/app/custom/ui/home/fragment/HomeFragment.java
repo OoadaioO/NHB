@@ -145,7 +145,7 @@ public class HomeFragment extends BaseFragment<HomeFragmentVM, FragmentHomeBindi
         if (null != viewDataBinding.homeVp) {
             viewDataBinding.homeVp.setOnPageChangeListener(this);
         }
-        if (isRefreshMain){
+        if (isRefreshMain) {
             isRefreshMain = false;
             viewModel.fetchRemoteData();
         }
@@ -170,7 +170,7 @@ public class HomeFragment extends BaseFragment<HomeFragmentVM, FragmentHomeBindi
     // TODO: 9/3/16 Evenbus 
     @Subscribe(threadMode = ThreadMode.MainThread)
     public void refreshHomeData(EventCenter<String> center) {
-        if (Constants.EventType.LOCATION_AREA_CHANGE.equals(center.type)){
+        if (Constants.EventType.LOCATION_AREA_CHANGE.equals(center.type)) {
             String locationName = TextUtils.isEmpty(SpCustom.get().readString(Constants.LOCATION_AREA_NAME)) ? LocationServiceutils.getInstance().locationName : SpCustom.get().readString(Constants.LOCATION_AREA_NAME);
             viewDataBinding.homeTitle.titleBarHomeTvCity.setText(locationName);
             isRefreshMain = true;
@@ -180,9 +180,9 @@ public class HomeFragment extends BaseFragment<HomeFragmentVM, FragmentHomeBindi
     @Override
     public void onClickBanner(CommonBannerBean bean) {
         if (!TextUtils.isEmpty(bean.bannerData) && !TextUtils.isEmpty(bean.type)) {
-            switch (bean.type){
+            switch (bean.type) {
                 case Constants.BannerType.SHOP_ID:
-                    RouteHelper.getInstance().startItemDetail(getActivity(),bean.bannerData);
+                    RouteHelper.getInstance().startItemDetail(getActivity(), bean.bannerData);
                     break;
                 case Constants.BannerType.URL:
                     startActivity(new Intent(mContext, WebViewActivity.class).putExtra(Constants.WEB_URL, bean.bannerData));
@@ -270,33 +270,31 @@ public class HomeFragment extends BaseFragment<HomeFragmentVM, FragmentHomeBindi
             if (!NetUtils.isNetConnected()) {
                 viewDataBinding.commonListLoading.setBtnText(R.string.loading_again);
                 viewDataBinding.commonListLoading.loadFailed();
-                return;
             } else if (TextUtils.isEmpty(SpCustom.get().readString(Constants.LOCATION_AREA_NAME))) {
                 viewDataBinding.commonListLoading.setBtnText(R.string.please_select_city);
                 viewDataBinding.commonListLoading.loadFailed(getString(R.string.location_area_failed));
-                return;
             }
         } else if (TextUtils.equals("false", homeDataBean.isOpen)) {
             viewDataBinding.commonListLoading.setBtnText(R.string.please_select_city);
             viewDataBinding.commonListLoading.loadFailed(getString(R.string.location_failed));
-            return;
-        }
-        // header
-        mHeaderView.setBanners(getActivity(), homeDataBean.bannerList);
+        } else {
+            // header
+            mHeaderView.setBanners(getActivity(), homeDataBean.bannerList);
 //        mHeaderView.setButtons(homeDataBean.featureList);
-        mHeaderView.setStaticTemplates(homeDataBean.featureList);
-        //处理猜你喜欢
-        List<Fragment> fragmentList = new ArrayList<>();
-        HomeItemsFragment homeHotFragment = new HomeItemsFragment();
-        homeHotFragment.setTabType("items");
-        homeHotFragment.setOnNestedListViewScrollListener(this);
-        fragmentList.add(homeHotFragment);
+            mHeaderView.setStaticTemplates(homeDataBean.featureList);
+            //处理猜你喜欢
+            List<Fragment> fragmentList = new ArrayList<>();
+            HomeItemsFragment homeHotFragment = new HomeItemsFragment();
+            homeHotFragment.setTabType("items");
+            homeHotFragment.setOnNestedListViewScrollListener(this);
+            fragmentList.add(homeHotFragment);
 
-        mPagerAdapter = new HomeListPagerAdapter(getChildFragmentManager(), fragmentList, new String[]{getString(R.string.home_hot_area)});
-        viewDataBinding.homeVp.setAdapter(mPagerAdapter);
-        viewDataBinding.homeStlTabs.setViewPager(viewDataBinding.homeVp);
-        handleTabListData(0, homeDataBean);
-        viewDataBinding.commonListLoading.loadSuccess();
+            mPagerAdapter = new HomeListPagerAdapter(getChildFragmentManager(), fragmentList, new String[]{getString(R.string.home_hot_area)});
+            viewDataBinding.homeVp.setAdapter(mPagerAdapter);
+            viewDataBinding.homeStlTabs.setViewPager(viewDataBinding.homeVp);
+            handleTabListData(0, homeDataBean);
+            viewDataBinding.commonListLoading.loadSuccess();
+        }
     }
 
     /**
@@ -318,7 +316,7 @@ public class HomeFragment extends BaseFragment<HomeFragmentVM, FragmentHomeBindi
     public void onNestedScrollChanged(MatchListScrollView scrollView, int x, int y, int oldx, int oldy) {
         // 实现背景和title透明
         int viewHeight = mBannerView.getHeight();
-        float alpha = (3f *(float) y / viewHeight) + DEFAULT_TITLE_BAR_ALPHA;
+        float alpha = (3f * (float) y / viewHeight) + DEFAULT_TITLE_BAR_ALPHA;
         viewDataBinding.homeTitle.rlRoot.setAlpha(alpha);
 //        float alpha = 1.5f * (float) y / viewHeight;
 //        viewDataBinding.homeTitle.rlRoot.setAlpha(alpha);

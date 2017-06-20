@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--测试地址-->
-    <string name="url">http://www.sseew.com:8080/Trusttee-web/webservice/</string>
-    <string name="base_url">http://www.sseew.com:8080/Trusttee-web/</string>
+    <!--<string name="url">http://www.sseew.com:8080/Trusttee-web/webservice/</string>-->
+    <!--<string name="base_url">http://www.sseew.com:8080/Trusttee-web/</string>-->
     <!--线上地址-->
-    <!--<string name="url">http://www.sseew.com/Trusttee-web/webservice/</string>-->
-    <!--<string name="base_url">http://www.sseew.com/Trusttee-web/</string>-->
+    <string name="url">http://www.sseew.com/Trusttee-web/webservice/</string>
+    <string name="base_url">http://www.sseew.com/Trusttee-web/</string>
     <!--本地开发地址-->
     <!--<string name="url">http://15159mr592.iok.laa/Trusttee-web/webservice/</string>-->
     <!--<string name="base_url">http://15159mr592.iok.laa/Trusttee-web/</string>-->
