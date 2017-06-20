@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?><!-- listView/gridView/recyclerView itemView template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.text.TextUtils" />
+
+        <import type="com.nhb.app.custom.R" />
+
+        <import type="android.view.View" />
+
+        <import type="java.lang.String" />
+
+        <import type="com.nhb.app.custom.utils.ResourceUtil" />
+        <variable
+            name="itemViewModel"
+            type="com.nhb.app.custom.viewmodel.ItemOrderVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/order_iv_store_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                bind:imageUrl="@{itemViewModel.item.storePic}"
+                bind:round="@{true}" />
+
+            <TextView
+                android:id="@+id/order_tv_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/order_iv_store_img"
+                android:layout_toRightOf="@+id/order_iv_store_img"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/ic_order_arrow"
+                android:gravity="left|center"
+                android:text="@{itemViewModel.item.storeName}"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:id="@+id/order_tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:gravity="left|center"
+                android:text="@{TextUtils.equals(itemViewModel.item.orderState,ResourceUtil.getString(R.string.order_pay_status_success)) ? @string/order_status_finish:(TextUtils.equals(itemViewModel.item.orderState,ResourceUtil.getString(R.string.order_pay_status_going))?@string/order_status_ongoing: @string/order_status_cancel)}"
+                android:textColor="@{TextUtils.equals(itemViewModel.item.orderState,ResourceUtil.getString(R.string.order_pay_status_fail)) ? @color/c_666666: @color/c_main}"
+                android:textSize="@dimen/font_15" />
+        </RelativeLayout>
+
+        <View style="@style/line_gray_1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <ImageView
+                android:id="@+id/order_iv_items_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="11dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerInside"
+                bind:imageUrl="@{itemViewModel.item.itemPic}"
+                bind:radius="@{10}" />
+
+            <TextView
+                android:id="@+id/order_tv_items_instore_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/order_iv_items_img"
+                android:layout_toRightOf="@+id/order_iv_items_img"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text="@{itemViewModel.item.itemName}"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/font_16"/>
+
+            <TextView
+                android:id="@+id/order_tv_items_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/order_tv_items_instore_price"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text="@{String.format(ResourceUtil.getString(R.string.order_items_num),itemViewModel.item.buyNum)}"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/order_tv_create_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/order_tv_items_instore_price"
+                android:layout_below="@+id/order_tv_items_instore_price"
+                android:layout_marginBottom="11dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/items_img"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text="@{String.format(ResourceUtil.getString(R.string.order_create_time),itemViewModel.item.createTime)}"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_14" />
+        </RelativeLayout>
+
+        <View style="@style/line_gray_1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/order_tv_items_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="50dp"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text="@{String.format(ResourceUtil.getString(R.string.order_address),itemViewModel.item.address)}"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/order_iv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:drawableRight="@drawable/ic_order_phone"
+                android:gravity="left|center"
+                android:onClick="@{itemViewModel.clickPhone}" />
+
+            <View
+                style="@style/common_vertical_divider"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/order_iv_phone" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

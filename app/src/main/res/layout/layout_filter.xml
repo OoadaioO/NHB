@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.CommonFilterVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 顶部tab -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/filter_tab_height"
+            android:background="@color/filter_tab_bg_normal"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- 商品 -->
+            <RelativeLayout
+                android:id="@+id/filter_rl_items"
+                style="@style/filter_tab_rl">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp">
+
+                    <TextView
+                        android:id="@+id/filter_tv_items"
+                        style="@style/filter_tab_tv"
+                        android:text="@string/filter_tab_items_default" />
+                </RelativeLayout>
+
+                <ImageView style="@style/filter_tab_iv" />
+            </RelativeLayout>
+
+            <View style="@style/filter_tab_vertical_divider" />
+
+            <!-- 销量优先 -->
+            <RelativeLayout
+                android:id="@+id/filter_rl_sales"
+                style="@style/filter_tab_rl">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp">
+
+                    <TextView
+                        android:id="@+id/filter_tv_sales"
+                        style="@style/filter_tab_tv"
+                        android:text="@string/filter_tab_sales_default" />
+                </RelativeLayout>
+
+                <ImageView style="@style/filter_tab_iv" />
+            </RelativeLayout>
+
+            <View style="@style/filter_tab_vertical_divider" />
+
+            <!-- 排列方式 -->
+            <RelativeLayout
+                android:id="@+id/filter_rl_order"
+                style="@style/filter_tab_rl">
+
+                <ImageView
+                    android:id="@+id/filter_iv_order"
+                    style="@style/filter_tab_iv"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/sel_filter_order_tab_arrow" />
+            </RelativeLayout>
+
+            <View style="@style/filter_tab_vertical_divider" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/base_horizontal_divider" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- 数据展示区 -->
+            <RelativeLayout
+                android:id="@+id/filter_rl_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/c_B3999999">
+
+                <!-- 列表数据展示区 -->
+                <RelativeLayout
+                    android:id="@+id/filter_rl_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="118dp"
+                    android:background="@color/white">
+
+                    <!-- 商品一级列表 -->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/filter_rcv_itemsGroup"
+                        style="@style/filter_content_lv"
+                        android:layout_width="130dp"
+                        android:layout_height="match_parent" />
+
+                    <!-- 商品二级列表 -->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/filter_rcv_itemsChild"
+                        style="@style/filter_content_lv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@id/filter_rcv_itemsGroup"
+                        android:background="@color/c_F5F5F5" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

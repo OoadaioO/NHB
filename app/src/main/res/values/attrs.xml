@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="tabView" format="reference" />
+    <attr name="iconWidth" format="dimension" />
+    <attr name="iconHeight" format="dimension" />
+
+    <declare-styleable name="TabView">
+        <attr name="iconWidth" />
+        <attr name="iconHeight" />
+    </declare-styleable>
+
+    <!-- 自定义星级评分控件 -->
+    <declare-styleable name="CommonRatingBar">
+        <!-- 总个数 -->
+        <attr name="starsNum" format="integer" />
+        <!-- 选中的个数 -->
+        <attr name="ratingNum" format="float" />
+        <!-- 间距 -->
+        <attr name="rating_specing" format="dimension" />
+        <!-- 星星的宽度 -->
+        <attr name="star_width" format="dimension" />
+        <!-- 星星的高度 -->
+        <attr name="star_height" format="dimension" />
+        <!-- 星星的正常图片 -->
+        <attr name="drawable_normal" format="reference" />
+        <!-- 星星的选中图片 -->
+        <attr name="drawable_selected" format="reference" />
+        <!-- 半颗星星 -->
+        <attr name="drawable_half" format="reference" />
+    </declare-styleable>
+
+    <!-- StaticTemplateLayout 相关属性 -->
+    <declare-styleable name="StaticTemplateLayout">
+        <attr name="divider_visible" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightListView">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+
+    <!-- Support for a HorizontalListView -->
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+
+    <!--自定义大V标识的大小-->
+    <declare-styleable name="PortraitImageView">
+        <attr name="portrait_size" format="dimension" />
+        <attr name="level_size" format="dimension" />
+        <attr name="level_src" format="reference" />
+    </declare-styleable>
+
+    <!--标签布局-->
+    <declare-styleable name="FlowLayout">
+        <attr name="horizontalSpacing" format="dimension" />
+        <attr name="verticalSpacing" format="dimension" />
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="debugDraw" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout_LayoutParams">
+        <attr name="layout_newLine" format="boolean" />
+        <attr name="layout_horizontalSpacing" format="dimension" />
+        <attr name="layout_verticalSpacing" format="dimension" />
+    </declare-styleable>
+
+    <!--启动页广告跳过转圈相关属性-->
+    <declare-styleable name="DonutProgress">
+        <attr name="donut_progress" format="integer" />
+        <attr name="donut_max" format="integer" />
+
+        <attr name="donut_unfinished_color" format="color" />
+        <attr name="donut_finished_color" format="color" />
+
+        <attr name="donut_finished_stroke_width" format="dimension" />
+        <attr name="donut_unfinished_stroke_width" format="dimension" />
+
+        <attr name="donut_text_size" format="dimension" />
+        <attr name="donut_text_color" format="color" />
+
+        <attr name="donut_prefix_text" format="string" />
+        <attr name="donut_suffix_text" format="string" />
+        <attr name="donut_text" format="string" />
+
+        <attr name="donut_background_color" format="color" />
+
+        <attr name="donut_inner_bottom_text" format="string" />
+        <attr name="donut_inner_bottom_text_size" format="dimension" />
+        <attr name="donut_inner_bottom_text_color" format="color" />
+
+        <attr name="donut_circle_starting_degree" format="integer" />
+    </declare-styleable>
+</resources>

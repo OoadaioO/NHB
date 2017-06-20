@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#FF9933</color>
+    <color name="colorPrimaryDark">#FF9933</color>
+    <color name="colorAccent">#FF9933</color>
+
+    <!-- 以下待整理成色板 -->
+    <color name="c_F7F7F7">#F7F7F7</color>
+
+    <!-- =============================================5.x色板色值======================================================= -->
+    <!-- 主色 -->
+    <color name="c_main">#FF9933</color>
+    <!-- 主色 -->
+    <color name="c_FF9933">#FF9933</color>
+    <!-- 辅助信息 -->
+    <color name="c_FF5A79">#FF5A79</color>
+    <!-- 主要文案 -->
+    <color name="c_333333">#333333</color>
+    <!-- 次级文案 -->
+    <color name="c_9B9B9B">#9B9B9B</color>
+    <!-- 分割线 -->
+    <color name="c_CCCCCC">#CCCCCC</color>
+    <!-- 分割线 -->
+    <color name="c_F0F0F0">#F0F0F0</color>
+    <!-- 间隔条、背景色 -->
+    <color name="c_F5F5F5">#F5F5F5</color>
+
+    <!-- =============================================5.x色板色值======================================================= -->
+
+    <!-- ===============================================常用透明度颜色(百分百表示的是不透明度)==================================c_============= -->
+    <!-- 95%白色 -->
+    <color name="c_F2FFFFFF">#F2FFFFFF</color>
+    <!-- 90%白色 -->
+    <color name="c_E6FFFFFF">#E6FFFFFF</color>
+    <!-- 85%白色 -->
+    <color name="c_D9FFFFFF">#D9FFFFFF</color>
+    <!-- 80%白色 -->
+    <color name="c_CCFFFFFF">#CCFFFFFF</color>
+    <!-- 75%白色 -->
+    <color name="c_BFFFFFFF">#BFFFFFFF</color>
+    <!-- 70%白色 -->
+    <color name="c_B3FFFFFF">#B3FFFFFF</color>
+    <!-- 65%白色 -->
+    <color name="c_A6FFFFFF">#A6FFFFFF</color>
+    <!-- 60%白色 -->
+    <color name="c_99FFFFFF">#99FFFFFF</color>
+    <!-- 55%白色 -->
+    <color name="c_8CFFFFFF">#8CFFFFFF</color>
+    <!-- 50%白色 -->
+    <color name="c_80FFFFFF">#80FFFFFF</color>
+    <!-- 45%白色 -->
+    <color name="c_73FFFFFF">#73FFFFFF</color>
+    <!-- 40%白色 -->
+    <color name="c_66FFFFFF">#66FFFFFF</color>
+    <!-- 35%白色 -->
+    <color name="c_59FFFFFF">#59FFFFFF</color>
+    <!-- 30%白色 -->
+    <color name="c_4DFFFFFF">#4DFFFFFF</color>
+    <!-- 25%白色 -->
+    <color name="c_40FFFFFF">#40FFFFFF</color>
+    <!-- 20%白色 -->
+    <color name="c_33FFFFFF">#33FFFFFF</color>
+    <!-- 15%白色 -->
+    <color name="c_26FFFFFF">#26FFFFFF</color>
+    <!-- 10%白色 -->
+    <color name="c_1AFFFFFF">#1AFFFFFF</color>
+    <!-- 5%白色 -->
+    <color name="c_0DFFFFFF">#0DFFFFFF</color>
+
+    <!-- 90%更美黑色 -->
+    <color name="c_E5333333">#E5333333</color>
+    <!-- 80%更美黑色 -->
+    <color name="c_CC333333">#CC333333</color>
+    <!-- 30%更美黑色 -->
+    <color name="c_4D333333">#4D333333</color>
+    <!-- 80%黑色 -->
+    <color name="c_CC000000">#CC000000</color>
+    <!-- 70%黑色 -->
+    <color name="c_B3000000">#B3000000</color>
+    <!-- 60%黑色 -->
+    <color name="c_99000000">#99000000</color>
+    <!-- 50%黑色 -->
+    <color name="c_80000000">#80000000</color>
+    <!-- 40%黑色 -->
+    <color name="c_66000000">#66000000</color>
+    <!-- 30%黑色 -->
+    <color name="c_4D000000">#4D000000</color>
+    <!-- 20%黑色 -->
+    <color name="c_33000000">#33000000</color>
+    <color name="c_4D4D4D">#4D4D4D</color>
+
+    <!-- 70%灰色 -->
+    <color name="c_B3999999">#B3999999</color>
+    <!-- 25%灰色 -->
+    <color name="c_40999999">#40999999</color>
+    <!-- 50%红色 -->
+    <color name="c_80FF7690">#80FF7690</color>
+    <!-- 30%灰色 -->
+    <color name="c_4DE5E5E5">#4DE5E5E5</color>
+
+    <!-- ===============================================常用基本颜色=============================================== -->
+
+    <!-- loadingStatusView相关颜色 -->
+    <color name="loading_failure_textcolor">#999999</color>
+    <color name="loading_failure_button">#D5D5D5</color>
+    <color name="loading_failure_button_textcolor">#666666</color>
+
+    <!-- 消息提示小红点 -->
+    <color name="base_red_badge">#FF3A30</color>
+
+    <!-- 默认ViewPager背景色 -->
+    <color name="base_viewpager_bg">#696969</color>
+
+    <!-- 默认竖直分割线颜色(13处引用) -->
+    <color name="base_vertical_divider">@color/c_EEEEEE</color>
+    <!-- 默认水平分割线颜色(71处引用) -->
+    <color name="base_horizontal_divider">@color/base_divider_heavy</color>
+    <!-- 默认列表项按下颜色 -->
+    <color name="base_item_bg_pressed">#F2FBFB</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="c_323232">#323232</color>
+    <color name="c_269B9B9B">#269B9B9B</color>
+    <color name="c_B9B9B9">#B9B9B9</color>
+    <color name="split">#E5E5E5</color>
+    <color name="c_EEEEEE">#EEEEEE</color>
+    <color name="c_C9C9CA">#C9C9CA</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_D5D5D5">#D5D5D5</color>
+    <color name="f_disabled">#5D5D5D</color>
+    <color name="f_title">#333333</color>
+    <color name="base_divider_heavy">#DDDDDD</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_FF1C00">#FF1C00</color>
+    <color name="c_F2F2F2">#F2F2F2</color>
+    <color name="c_DDDDDD">#DDDDDD</color>
+    <color name="c_80B8F2">#80B8F2</color>
+    <color name="c_26CB37">#26CB37</color>
+
+
+    <!-- ===============================================各模块颜色=============================================== -->
+
+    <!-- titlebar相关颜色 -->
+    <color name="titlebar_bg_green">@color/c_main</color>
+    <color name="titlebar_bg_white">#FFFFFF</color>
+    <color name="titlebar_title_black">#323232</color>
+    <color name="titlebar_bg_black">#454545</color>
+    <color name="titlebar_text_white">#FFFFFF</color>
+    <color name="titlebar_radio_text_normal">#6B6B6B</color>
+    <color name="titlebar_text_btn_white_style_normal">@color/c_main</color>
+    <color name="titlebar_text_btn_white_style_pressed">#C8C8C8</color>
+    <color name="titlebar_bottom_divider">#DDDDDD</color>
+    <color name="c_E5E5E5">#E5E5E5</color>
+    <color name="c_444444">#444444</color>
+
+    <!-- 筛选器相关颜色 -->
+    <color name="filter_tab_bg_normal">#FFFFFF</color>
+    <color name="filter_tab_text_normal">@color/c_999999</color>
+    <color name="filter_tab_text_selected">@color/c_main</color>
+    <color name="filter_tab_bottom_divider">@color/c_DDDDDD</color>
+    <color name="filter_content_bottom_divider">#FCFCFC</color>
+    <color name="filter_content_bg">#F5F5F5</color>
+    <color name="filter_item_top_divider">#FCFCFC</color>
+    <color name="filter_item_bottom_divider">#DFDFDD</color>
+    <color name="filter_item_bg_normal">#FFFFFF</color>
+    <color name="filter_item_bg_selected">#F6F6F6</color>
+    <color name="filter_item_text_normal">@color/c_333333</color>
+    <color name="filter_item_text_selected">@color/c_main</color>
+    <color name="base_bg_color">#FFFFFF</color>
+    <color name="c_7f7f7f">#7f7f7f</color>
+    <color name="c_FF331A">#FF331A</color>
+    <color name="c_cccccc">#CCCCCC</color>
+    <color name="c_1565B6">#1565B6</color>
+    <color name="c_1774D2">#1774D2</color>
+    <color name="c_646464">#646464</color>
+    <color name="c_D8D8D8">#D8D8D8</color>
+    <color name="c_A9A9A9">#A9A9A9</color>
+    <color name="c_797979">#797979</color>
+    <color name="c_BBBBBB">#BBBBBB</color>
+    <color name="c_404040">#404040</color>
+
+    <!--引导页的颜色-->
+    <color name="c_guide_one">#5BB5EF</color>
+    <color name="c_guide_two">#FFB926</color>
+    <color name="c_guide_three">#FF6169</color>
+
+    <!--会员卡背景色-->
+    <color name="c_7D44A2">#7D44A2</color>
+    <color name="c_019C71">#019C71</color>
+    <color name="c_3373BA">#3373BA</color>
+    <color name="c_79574B">#79574B</color>
+    <color name="c_D34778">#D34778</color>
+
+    <color name="c_0091EA">#0091EA</color>
+</resources>

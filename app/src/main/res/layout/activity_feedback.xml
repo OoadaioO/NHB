@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.FeedBackVM"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_F2F2F2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/layout_title"
+                layout="@layout/titlebar_normal"
+                bind:viewModel="@{viewModel}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/write_feedback"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_15"/>
+
+            <EditText
+                android:id="@+id/feedback_edit_content"
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:afterTextChanged="@{viewModel.contentEditable}"
+                android:background="@drawable/bg_content_corner_4_white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="left"
+                android:hint="@string/input_hint"
+                android:paddingLeft="10dp"
+                android:paddingRight="13dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/c_666666"
+                android:textColorHint="@color/c_CCCCCC"
+                android:textSize="@dimen/font_14"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/write_phone"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_15"/>
+
+            <EditText
+                android:id="@+id/feedback_edit_phone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:afterTextChanged="@{viewModel.phoneEditable}"
+                android:background="@drawable/bg_content_corner_4_white"
+                android:gravity="center|left"
+                android:hint="@string/input_hint"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:paddingLeft="15dp"
+                android:textColor="@color/c_666666"
+                android:textColorHint="@color/c_CCCCCC"
+                android:textSize="@dimen/font_15"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="62dp"
+                android:background="@drawable/sel_button_main"
+                android:enabled="@{viewModel.submitEnable}"
+                android:gravity="center"
+                android:onClick="@{viewModel.clickSubmit}"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_16"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="right"
+                android:onClick="@{viewModel.clickContactServerCustomer}"
+                android:text="@string/contact_server_customer"
+                android:textColor="@color/c_0091EA"
+                android:textSize="@dimen/font_15"/>
+        </LinearLayout>
+    </ScrollView>
+</layout>

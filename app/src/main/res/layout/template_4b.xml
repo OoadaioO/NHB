@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/template4B_ll_root"
+    style="@style/template_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/template4B_tv_title"
+        style="@style/template_title" />
+
+    <!-- 宽高比750:480-->
+    <LinearLayout
+        android:id="@+id/template4B_ll_imagesABCD"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:orientation="horizontal">
+
+        <!-- 图A,宽高比2:3 -->
+        <ImageView
+            android:id="@+id/template4B_iv_imageA"
+            style="@style/template_image_vertical_fill"
+            android:layout_width="160dp" />
+
+        <View
+            android:id="@+id/template4B_dividerVLeft"
+            style="@style/common_vertical_divider" />
+
+        <!-- 图BCD，竖直均分-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/template4B_iv_imageB"
+                style="@style/template_image_vertical_split" />
+
+            <View
+                android:id="@+id/template4B_dividerHTop"
+                style="@style/common_horizontal_divider" />
+
+            <!-- 图CD,宽高比430:240,左右均分 -->
+            <LinearLayout
+                android:id="@+id/template4B_ll_imagesCD"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/template4B_iv_imageC"
+                    style="@style/template_image_horizontal_split" />
+
+                <View
+                    android:id="@+id/template4B_dividerVRight"
+                    style="@style/common_vertical_divider" />
+
+                <ImageView
+                    android:id="@+id/template4B_iv_imageD"
+                    style="@style/template_image_horizontal_split" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

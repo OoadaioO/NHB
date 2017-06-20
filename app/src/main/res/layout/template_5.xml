@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.HomeHeaderVM"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/template5_ll_root"
+        style="@style/template_layout">
+
+        <LinearLayout
+            android:id="@+id/template5_ll_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/template5_tv_title"
+                style="@style/template_title"
+                android:drawableLeft="@drawable/ic_home_hot"
+                android:drawablePadding="10dp"
+                android:gravity="left|center"
+                android:paddingLeft="15dp"
+                android:text="@string/home_hot_area"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/font_17"/>
+            <!-- 图B+图C,宽高比750:200,水平均分 -->
+            <LinearLayout
+                android:id="@+id/template5_ll_imagesAB"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/template5_iv_imageA"
+                    style="@style/template_image_horizontal_split"
+                    android:layout_width="247dp"
+                    android:layout_weight="2"
+                    android:onClick="@{viewModel.cliclTemplate}"
+                    bind:imageUrl="@{viewModel.templateSubItems.size()==5 ? viewModel.templateSubItems.get(0).itemPic : null}"/>
+
+                <View style="@style/common_vertical_divider_10"/>
+
+                <ImageView
+                    android:id="@+id/template5_iv_imageB"
+                    style="@style/template_image_horizontal_split"
+                    android:layout_width="119dp"
+                    android:layout_weight="1"
+                    android:onClick="@{viewModel.cliclTemplate}"
+                    bind:imageUrl="@{viewModel.templateSubItems.size()==5 ? viewModel.templateSubItems.get(1).itemPic : null}"/>
+            </LinearLayout>
+            <!-- 图B+图C,宽高比750:200,水平均分 -->
+            <LinearLayout
+                android:id="@+id/template5_ll_imagesCDE"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/template5_iv_imageC"
+                    style="@style/template_image_horizontal_split"
+                    android:onClick="@{viewModel.cliclTemplate}"
+                    bind:imageUrl="@{viewModel.templateSubItems.size()==5 ? viewModel.templateSubItems.get(2).itemPic : null}"/>
+
+                <View
+                    android:id="@+id/template5_dividerVCenterOne"
+                    style="@style/common_vertical_divider_10"/>
+
+                <ImageView
+                    android:id="@+id/template5_iv_imageD"
+                    style="@style/template_image_horizontal_split"
+                    android:onClick="@{viewModel.cliclTemplate}"
+                    bind:imageUrl="@{viewModel.templateSubItems.size()==5 ? viewModel.templateSubItems.get(3).itemPic: null}"/>
+
+                <View
+                    android:id="@+id/template5_dividerVCenterTwo"
+                    style="@style/common_vertical_divider_10"/>
+
+                <ImageView
+                    android:id="@+id/template5_iv_imageE"
+                    style="@style/template_image_horizontal_split"
+                    android:onClick="@{viewModel.cliclTemplate}"
+                    bind:imageUrl="@{viewModel.templateSubItems.size()==5 ? viewModel.templateSubItems.get(4).itemPic: null}"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_gray_1"/>
+
+        <View style="@style/line_gray_15"/>
+
+        <View style="@style/line_gray_1"/>
+    </LinearLayout>
+</layout>

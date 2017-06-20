@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titlebarNormal_rl_content"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/titlebar_height"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/titlebarNormal_iv_leftBtn"
+        android:layout_width="@dimen/titlebar_img_btn_size"
+        android:layout_height="@dimen/titlebar_img_btn_size"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/sel_titlebar_btn_back_white_style"/>
+
+    <TextView
+        android:id="@+id/titlebarNormal_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/titlebar_img_btn_size"
+        android:layout_marginRight="@dimen/titlebar_img_btn_size"
+        android:layout_centerInParent="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/titlebar_title_black"
+        android:textSize="@dimen/titlebar_title_size"/>
+
+    <ImageView
+        android:id="@+id/titlebarNormal_iv_rightBtn"
+        android:layout_width="@dimen/titlebar_img_btn_size"
+        android:layout_height="@dimen/titlebar_img_btn_size"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:src="@drawable/sel_titlebar_btn_finish_white_style"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/titlebarNormal_tv_rightText"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/titlebar_img_btn_size"
+        android:minWidth="@dimen/titlebar_img_btn_size"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center"
+        android:text="日程表"
+        android:textColor="@color/titlebar_title_black"
+        android:textSize="@dimen/titlebar_text_btn_size"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/titlebar_bottom_divider"/>
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><!-- listView/gridView/recyclerView itemView template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.interfaces.ITitleBarRightImage" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/titlebar_right_image"
+            bind:viewModel="@{viewModel}" />
+
+        <FrameLayout
+            android:id="@+id/fragment_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</layout>

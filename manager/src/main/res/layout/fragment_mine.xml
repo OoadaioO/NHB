@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_F0F0F0"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/appColor">
+
+        <ImageView
+            android:id="@+id/iv_head_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            tools:src="@drawable/default_user_icon"/>
+
+        <TextView
+            android:id="@+id/tv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/iv_head_pic"
+            tools:text="小熊官方旗舰店"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tv_user_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_shop_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@id/iv_head_pic"
+            tools:text="门店账号：1771036732"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:visibility="invisible"
+            android:src="@drawable/right"/>
+    </RelativeLayout>
+
+    <com.nhb.app.manager.view.MoreItemInfo
+        android:id="@+id/item_update_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="15dp"
+        app:leftIcon="@drawable/update_pwd"
+        app:titleText="@string/update_pwd"
+        app:rightIconVisibility="true"/>
+
+    <com.nhb.app.manager.view.MoreItemInfo
+        android:id="@+id/item_suggest"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="15dp"
+        app:leftIcon="@drawable/suggest"
+        app:titleText="@string/suggestion"
+        app:rightIconVisibility="true"/>
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+    <com.nhb.app.manager.view.MoreItemInfo
+        android:id="@+id/item_use_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:leftIcon="@drawable/use_agreement"
+        app:titleText="@string/use_agreement"
+        app:rightIconVisibility="true"/>
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+    <com.nhb.app.manager.view.MoreItemInfo
+        android:id="@+id/item_about"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:leftIcon="@drawable/about"
+        app:titleText="@string/about"
+        app:rightIconVisibility="true"/>
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/white"/>
+    <com.nhb.app.manager.view.MoreItemInfo
+        android:id="@+id/item_update_app"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:leftIcon="@drawable/update"
+        app:titleText="@string/update_app_version"
+        app:tipText="asdf"
+        app:rightIconVisibility="false"/>
+
+    <TextView
+        android:id="@+id/tv_login_out"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/login_out"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        android:textSize="14sp"
+        android:textColor="@color/c_D0021B"
+        android:background="@drawable/selector_more_item"/>
+
+</LinearLayout>

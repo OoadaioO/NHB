@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.interfaces.ITitleBarRightImage" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titlebar_height"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/titlebar_img_btn_size"
+            android:layout_height="@dimen/titlebar_img_btn_size"
+            android:onClick="@{viewModel.clickFinish}"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/sel_titlebar_btn_back_white_style" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/titlebar_img_btn_size"
+            android:layout_marginRight="@dimen/titlebar_img_btn_size"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="@{viewModel.getTitle}"
+            android:textColor="@color/titlebar_title_black"
+            android:textSize="@dimen/titlebar_title_size" />
+
+        <ImageView
+            android:id="@+id/iv_rightBtn"
+            android:layout_width="@dimen/titlebar_img_btn_size"
+            android:layout_height="@dimen/titlebar_img_btn_size"
+            android:layout_alignParentRight="true"
+            android:onClick="@{viewModel.clickRightImg}"
+            android:padding="17dp"
+            android:scaleType="centerInside"
+            android:visibility="@{viewModel.getRightBtnSrc != 0 ? View.VISIBLE : View.GONE}"
+            bind:srcRes="@{viewModel.getRightBtnSrc}" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/titlebar_bottom_divider" />
+    </RelativeLayout>
+</layout>

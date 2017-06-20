@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="itemViewModel"
+            type="com.nhb.app.custom.viewmodel.ItemMsgNoticeVM"/>
+
+        <import type="android.view.View"/>
+
+        <import type="android.text.TextUtils"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sel_common_item_bg">
+
+        <ImageView
+            android:id="@+id/notice_item_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/notice_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="150dp"
+            android:layout_marginTop="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{itemViewModel.item.notifyTitle}"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/font_17"/>
+
+        <TextView
+            android:id="@+id/notice_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notice_item_title"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="14dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingBottom="15dp"
+            android:text="@{itemViewModel.item.msgContent}"
+            android:textColor="@color/c_444444"
+            android:textSize="@dimen/font_15"/>
+
+        <TextView
+            android:id="@+id/notice_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="17dp"
+            android:text="@{itemViewModel.item.createTime}"
+            android:textColor="@color/c_999999"
+            android:textSize="@dimen/font_12"
+            android:visibility="@{TextUtils.isEmpty(itemViewModel.item.createTime) ? View.GONE:View.VISIBLE}"/>
+
+        <ImageView
+            android:id="@+id/notice_item_unread_amount"
+            style="@style/common_red_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/notice_item_time"
+            android:layout_marginRight="15dp"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/notice_item_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:paddingBottom="18dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_right_arrow"
+            android:visibility="gone"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/notice_item_icon"
+            android:background="@color/titlebar_bottom_divider"/>
+    </RelativeLayout>
+</layout>

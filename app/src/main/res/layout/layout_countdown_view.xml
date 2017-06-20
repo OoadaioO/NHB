@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 倒计时View -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/countdownView_tv_hl"
+        style="@style/countdown_view_tv_label_left" />
+
+    <TextView
+        android:id="@+id/countdownView_tv_hr"
+        style="@style/countdown_view_tv_label_right" />
+
+    <TextView style="@style/countdown_view_tv_colon" />
+
+    <TextView
+        android:id="@+id/countdownView_tv_ml"
+        style="@style/countdown_view_tv_label_left" />
+
+    <TextView
+        android:id="@+id/countdownView_tv_mr"
+        style="@style/countdown_view_tv_label_right" />
+
+    <TextView style="@style/countdown_view_tv_colon" />
+
+    <TextView
+        android:id="@+id/countdownView_tv_sl"
+        style="@style/countdown_view_tv_label_left" />
+
+    <TextView
+        android:id="@+id/countdownView_tv_sr"
+        style="@style/countdown_view_tv_label_right" />
+</LinearLayout>

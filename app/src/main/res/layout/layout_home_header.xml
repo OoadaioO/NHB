@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.HomeHeaderVM"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <!-- 轮播图 -->
+        <RelativeLayout
+            android:id="@+id/homeHeader_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.nhb.app.custom.common.view.BannerView
+                android:id="@+id/homeHeader_bv_slides"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <!-- 固定按钮区 -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/homeHeader_hfgv_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:listSelector="@android:color/transparent"
+            bind:beans="@{viewModel.commonEntranceBeenList}"
+            bind:itemClickListener="@{viewModel.clickCommonEntrance}"
+            bind:itemVMFactory="@{viewModel.commonEntranceFactory}"
+            bind:layoutManager="@{viewModel.layoutManager}"/>
+
+        <View
+            style="@style/line_gray_1"
+            android:visibility="gone"/>
+
+        <View
+            style="@style/line_gray_15"
+            android:visibility="gone"/>
+
+        <View
+            style="@style/line_gray_1"
+            android:visibility="gone"/>
+
+        <include
+            android:id="@+id/template_3_view"
+            layout="@layout/template_3a"
+            android:visibility="gone"
+            bind:viewModel="@{viewModel}"/>
+    </LinearLayout>
+</layout>

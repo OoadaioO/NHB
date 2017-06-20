@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义条目-->
+    <attr name="leftIcon" format="reference"/>
+    <attr name="titleText" format="string"/>
+    <attr name="rightIconVisibility" format="boolean"/>
+    <attr name="tipText" format="string"/>
+    <declare-styleable name="MoreItem">
+        <attr name="leftIcon"/>
+        <attr name="titleText"/>
+        <attr name="rightIconVisibility"/>
+        <attr name="tipText"/>
+    </declare-styleable>
+    <!--空白页面-->
+    <attr name="errorIcon" format="reference"/>
+    <attr name="netErrorIcon" format="reference"/>
+    <attr name="emptyIcon" format="reference"/>
+    <declare-styleable name="EmptyView">
+        <attr name="errorIcon"/>
+        <attr name="netErrorIcon"/>
+        <attr name="emptyIcon"/>
+    </declare-styleable>
+
+</resources>

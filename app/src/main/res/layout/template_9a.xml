@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 5.9.0 豆腐块九图模板A -->
+<LinearLayout
+    android:id="@+id/template9A_ll_root"
+    style="@style/template_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/template9A_tv_title"
+        style="@style/template_title" />
+
+    <!-- 九宫格,宽高比1:1,都是正方形 -->
+    <LinearLayout
+        android:id="@+id/template9A_ll_imagesABC"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageA"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9A_dividerVTopLeft"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageB"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9A_dividerVTopRight"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageC"
+            style="@style/template_image_horizontal_split" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/template9A_dividerHTop"
+        style="@style/common_horizontal_divider" />
+
+    <LinearLayout
+        android:id="@+id/template9A_ll_imagesDEF"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageD"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9A_dividerVCenterLeft"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageE"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9A_dividerVCenterRight"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageF"
+            style="@style/template_image_horizontal_split" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/template9A_dividerHBottom"
+        style="@style/common_horizontal_divider" />
+
+    <LinearLayout
+        android:id="@+id/template9A_ll_imagesGHI"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageG"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9A_dividerVBottomLeft"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageH"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9A_dividerVBottomRight"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9A_iv_imageI"
+            style="@style/template_image_horizontal_split" />
+    </LinearLayout>
+
+</LinearLayout>

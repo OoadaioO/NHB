@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.nhb.app.library.view.MineViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/line"/>
+
+        <com.flyco.tablayout.CommonTabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff"
+            tab:tl_iconHeight="23dp"
+            tab:tl_iconWidth="23dp"
+            tab:tl_indicator_color="@color/appColor"
+            tab:tl_indicator_height="0dp"
+            tab:tl_textSelectColor="@color/appColor"
+            tab:tl_textUnselectColor="@color/c_999999"
+            tab:tl_textsize="12sp"
+            tab:tl_underline_color="#DDDDDD"
+            tab:tl_underline_height="1dp" />
+
+    </LinearLayout>
+</LinearLayout>

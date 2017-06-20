@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:id="@+id/loading_ll_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginRight="3dp"
+            android:indeterminateDrawable="@drawable/loading_default"
+            android:indeterminateDuration="1000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_loading"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+            android:textColor="@color/c_323232"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loading_ll_failure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="1dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_loading_failure" />
+
+        <TextView
+            android:id="@+id/loading_tv_failure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="7dp"
+            android:text="@string/loading_failure"
+            android:textColor="@color/loading_failure_textcolor"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/loading_btn_loading_again"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/bg_btn_loading_failure"
+            android:gravity="center"
+            android:text="@string/loading_again"
+            android:textColor="@color/loading_failure_button_textcolor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loading_ll_emptydata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_loading_empty_data" />
+
+        <TextView
+            android:id="@+id/loading_tv_emptydata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="7dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/loading_empty"
+            android:textColor="@color/loading_failure_textcolor"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_F2F2F2"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请填写您的意见或建议："
+            android:textColor="@color/c_666666"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_suggest"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_suggestion"
+            android:gravity="left|top"
+            android:padding="10dp"
+            android:textColor="@color/c_666666"
+            android:textCursorDrawable="@null"
+            android:textSize="17sp"
+            tools:text="我的建议是。。。" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="请填写您的联系方式："
+            android:textColor="@color/c_666666"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_suggestion"
+            android:gravity="center_vertical"
+            android:inputType="phone"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:singleLine="true"
+            android:textColor="@color/c_666666"
+            android:textCursorDrawable="@null"
+            android:textSize="17sp"
+            tools:text="17710367328" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/selector_btn"
+            android:gravity="center"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:enabled="false"
+            android:textSize="20sp" />
+    </LinearLayout>
+</ScrollView>

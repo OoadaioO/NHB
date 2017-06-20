@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.MainTabVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/main_rl_menu_home"
+            style="@style/main_menu_rl"
+            android:onClick="@{viewModel.clickHome}">
+
+            <ImageView
+                android:id="@+id/main_iv_menu_home"
+                style="@style/main_menu_iv"
+                android:src="@drawable/sel_ic_menu_home" />
+
+            <TextView
+                android:id="@+id/main_tv_menu_home"
+                style="@style/main_menu_tv"
+                android:layout_below="@id/main_iv_menu_home"
+                android:text="@string/menu_bar_home" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_rl_menu_items"
+            style="@style/main_menu_rl"
+            android:onClick="@{viewModel.clickItems}">
+
+            <ImageView
+                android:id="@+id/main_iv_menu_items"
+                style="@style/main_menu_iv"
+                android:src="@drawable/sel_ic_menu_items" />
+
+            <TextView
+                android:id="@+id/main_tv_menu_community"
+                style="@style/main_menu_tv"
+                android:layout_below="@id/main_iv_menu_items"
+                android:text="@string/menu_bar_items" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_rl_menu_personal"
+            style="@style/main_menu_rl"
+            android:onClick="@{viewModel.clickPersonal}">
+
+            <ImageView
+                android:id="@+id/main_iv_menu_personal"
+                style="@style/main_menu_iv"
+                android:src="@drawable/sel_ic_menu_personal" />
+
+            <TextView
+                android:id="@+id/main_tv_menu_personal"
+                style="@style/main_menu_tv"
+                android:layout_below="@id/main_iv_menu_personal"
+                android:text="@string/menu_bar_personal" />
+
+            <ImageView
+                android:id="@+id/main_iv_menu_msg_badge"
+                style="@style/common_red_badge"
+                android:layout_alignLeft="@id/main_iv_menu_personal"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="7dp"
+                android:visibility="@{viewModel.ivMsgBadge ? View.VISIBLE : View.GONE}" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_rl_menu_more"
+            style="@style/main_menu_rl"
+            android:onClick="@{viewModel.clickMore}">
+
+            <ImageView
+                android:id="@+id/main_iv_menu_more"
+                style="@style/main_menu_iv"
+                android:src="@drawable/sel_ic_menu_more" />
+
+            <TextView
+                android:id="@+id/main_tv_menu_welfare"
+                style="@style/main_menu_tv"
+                android:layout_below="@id/main_iv_menu_more"
+                android:text="@string/menu_bar_more" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

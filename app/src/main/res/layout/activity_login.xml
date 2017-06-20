@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.LoginVM"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_F2F2F2"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/order_detail_title"
+            layout="@layout/titlebar_normal"
+            bind:viewModel="@{viewModel}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/verify_note"
+            android:textColor="@color/c_999999"
+            android:textSize="@dimen/font_12"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.nhb.app.custom.common.view.ClearEditText
+                    android:id="@+id/login_edt_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/phone_number"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="13dp"
+                    android:singleLine="true"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/font_14"/>
+
+                <TextView
+                    android:id="@+id/login_tv_get_code"
+                    android:layout_width="72dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_content_corner_9"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:onClick="@{viewModel.clickVerifyCode}"
+                    android:text="@string/get_verify_code"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_12"/>
+            </RelativeLayout>
+
+            <View style="@style/line_black_1"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.nhb.app.custom.common.view.ClearEditText
+                    android:id="@+id/login_edt_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/verify_code"
+                    android:maxLength="6"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="13dp"
+                    android:singleLine="true"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/font_14"/>
+
+                <TextView
+                    android:id="@+id/login_tv_no_code"
+                    android:layout_width="72dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:onClick="@{viewModel.clickNoCodeBtn}"
+                    android:text="@string/cannot_get_code"
+                    android:textColor="@color/c_main"
+                    android:textSize="@dimen/font_12"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/login_tv_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bg_content_corner_9"
+            android:enabled="false"
+            android:gravity="center"
+            android:onClick="@{viewModel.clickLoginBtn}"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="@string/login_quick"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_18"/>
+
+        <TextView
+            android:id="@+id/login_tv_protocol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{viewModel.clickProtocol}"
+            android:text="@string/login_protocol"
+            android:textColor="@color/c_main"
+            android:textSize="@dimen/font_12"/>
+
+        <LinearLayout
+            android:id="@+id/ll_login_cant_send"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <View
+                    style="@style/line_black_1"
+                    android:layout_width="140dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="@string/login_hint"
+                    android:textColor="@color/c_999999"
+                    android:textSize="@dimen/font_12"/>
+
+                <View
+                    style="@style/line_black_1"
+                    android:layout_width="140dp"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/login_hit_note"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/font_12"/>
+
+            <TextView
+                android:id="@+id/login_tv_get_yycode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bg_content_corner_9"
+                android:enabled="false"
+                android:gravity="center"
+                android:onClick="@{viewModel.clickYyCodeBtn}"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="@string/login_yy_code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_18"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

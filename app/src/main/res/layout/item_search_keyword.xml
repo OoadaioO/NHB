@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!-- listView/gridView/recyclerView itemView template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="itemViewModel"
+            type="com.nhb.app.custom.viewmodel.SearchKeywordItemVM" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/searchKeyword_rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/sel_common_item_bg"
+        android:descendantFocusability="blocksDescendants">
+
+        <ImageView
+            android:id="@+id/searchKeyword_iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/search_icon" />
+
+        <ImageView
+            android:id="@+id/searchKeyword_iv_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/common_search_item_arrow" />
+
+        <com.nhb.app.custom.common.view.HighlightTextView
+            android:id="@+id/searchKeyword_tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/searchKeyword_iv_arrow"
+            android:layout_toRightOf="@id/searchKeyword_iv_icon"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@{itemViewModel.item}"
+            android:textColor="@color/c_404040"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/c_EEEEEE" />
+    </RelativeLayout>
+</layout>

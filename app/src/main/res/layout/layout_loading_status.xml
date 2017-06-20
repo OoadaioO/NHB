@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:bind="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<import type="android.view.View" />
+		<!-- name是固定的,type为viewModel的全路径 -->
+		<variable
+			name="viewModel"
+			type="com.nhb.app.custom.viewmodel.interfaces.ILoadingStatus" />
+	</data>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@android:color/white"
+		android:visibility="@{(viewModel.getResultCode == 1 || viewModel.getResultCode == -1) ? View.GONE : View.VISIBLE}">
+
+		<LinearLayout
+			android:id="@+id/ll_loading"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:orientation="horizontal"
+			android:visibility="@{viewModel.getResultCode == 0 ? View.VISIBLE : View.GONE}">
+
+			<ProgressBar
+				android:layout_width="18dp"
+				android:layout_height="18dp"
+				android:layout_marginRight="3dp"
+				android:indeterminateDrawable="@drawable/loading_default"
+				android:indeterminateDuration="1000" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/hint_loading"
+				android:textAppearance="?android:attr/textAppearanceSmallInverse"
+				android:textColor="@color/c_323232"
+				android:textSize="14sp" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ll_failure"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:gravity="center_horizontal"
+			android:orientation="vertical"
+			android:paddingBottom="1dp"
+			android:visibility="@{viewModel.getResultCode == 3 ? View.VISIBLE : View.GONE}">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/icon_loading_failure" />
+
+			<TextView
+				android:id="@+id/tv_failure"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="15dp"
+				android:gravity="center_horizontal"
+				android:lineSpacingExtra="7dp"
+				android:text="@{viewModel.failureText}"
+				android:textColor="@color/loading_failure_textcolor"
+				android:textSize="14sp" />
+
+			<Button
+				android:id="@+id/btn_reloading"
+				android:layout_width="90dp"
+				android:layout_height="30dp"
+				android:layout_marginTop="21dp"
+				android:background="@drawable/bg_btn_loading_failure"
+				android:gravity="center"
+				android:text="@string/loading_again"
+				android:onClick="@{viewModel.onClickReload}"
+				android:textColor="@color/loading_failure_button_textcolor" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/ll_empty"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:gravity="center_horizontal"
+			android:orientation="vertical"
+			android:visibility="@{viewModel.getResultCode == 2 ? View.VISIBLE : View.GONE}">
+
+			<ImageView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/icon_loading_empty_data" />
+
+			<TextView
+				android:id="@+id/tv_empty"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="25dp"
+				android:gravity="center_horizontal"
+				android:lineSpacingExtra="7dp"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
+				android:text="@{viewModel.emptyText}"
+				android:textColor="@color/loading_failure_textcolor"
+				android:textSize="14sp" />
+		</LinearLayout>
+	</RelativeLayout>
+</layout>

@@ -1,0 +1,1 @@
+include ':app',':library', ':manager', ':onekeyshare', ':sharesdk', ':frame',':pulltorefresh',':pingpp'

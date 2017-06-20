@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 5.9.0 豆腐块九图模板B -->
+<LinearLayout
+    android:id="@+id/template9B_ll_root"
+    style="@style/template_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/template9B_tv_title"
+        style="@style/template_title" />
+
+    <!-- 图A,宽高比750:200 -->
+    <ImageView
+        android:id="@+id/template9B_iv_imageA"
+        style="@style/template_image_horizontal_fill"
+        android:layout_height="100dp" />
+
+    <View
+        android:id="@+id/template9B_dividerHTop"
+        style="@style/common_horizontal_divider" />
+
+    <!-- 图BCDE,宽高比750:200,水平四等分 -->
+    <LinearLayout
+        android:id="@+id/template9B_ll_imagesBCDE"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/template9B_iv_imageB"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9B_dividerVCenterLeft"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9B_iv_imageC"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9B_dividerVCenterCenter"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9B_iv_imageD"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9B_dividerVCenterRight"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9B_iv_imageE"
+            style="@style/template_image_horizontal_split" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/template9B_dividerHBottom"
+        style="@style/common_horizontal_divider" />
+
+    <!-- 图FGHI,宽高比750:200,水平四等分 -->
+    <LinearLayout
+        android:id="@+id/template9B_ll_imagesFGHI"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/template9B_iv_imageF"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9B_dividerVBottomLeft"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9B_iv_imageG"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9B_dividerVBottomCenter"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9B_iv_imageH"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template9B_dividerVBottomRight"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template9B_iv_imageI"
+            style="@style/template_image_horizontal_split" />
+    </LinearLayout>
+
+</LinearLayout>

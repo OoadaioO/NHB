@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.MoreFragmentVM"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_F2F2F2"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/titlebar_simple"
+            bind:viewModel="@{viewModel}"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarThumbVertical="@drawable/scrollbar_thumb_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    style="@style/line_gray_1"
+                    android:layout_marginTop="10dp"/>
+
+                <!-- 清除缓存 -->
+                <RelativeLayout
+                    android:id="@+id/rl_clear_cache"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickClearCache}">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/clear_cache"/>
+
+                    <TextView
+                        style="@style/personal_item_tv_version_code"
+                        android:text="@{viewModel.cacheSize}"/>
+                </RelativeLayout>
+
+                <View style="@style/line_gray_1"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_check_new_version"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickCurrentVersion}">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/check_new_version"/>
+
+                    <TextView
+                        style="@style/personal_item_tv_version_code"
+                        android:text="@{viewModel.versionCode}"/>
+
+                </RelativeLayout>
+
+                <View style="@style/line_gray_1"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_user_protocol"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickUserProtocol}">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/user_protocol"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                </RelativeLayout>
+
+                <View style="@style/line_gray_1"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_using_help"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickUsingHelp}">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/using_help"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/line_gray_1"
+                    android:layout_marginTop="10dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_about_us"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickAboutUs}">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/about_us"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                </RelativeLayout>
+
+                <View style="@style/line_gray_1"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_customer_service_phone"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickCustomerPhone}">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/customer_service_phone"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                </RelativeLayout>
+
+                <View style="@style/line_gray_1"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_feedback"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickFeedBack}">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/feedback"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/line_gray_1"
+                    android:layout_marginTop="10dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_give_us_high_praise"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickHighPraise}"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/give_us_high_praise"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_our_cooperation"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickCooperation}">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/our_cooperation"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_invite_friend"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickInviteFriend}"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/personal_item_tv_name"
+                        android:text="@string/invite_friend"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                </RelativeLayout>
+
+                <View style="@style/line_gray_1"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

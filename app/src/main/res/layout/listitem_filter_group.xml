@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><!-- listView/gridView/recyclerView itemView template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="itemViewModel"
+            type="com.nhb.app.custom.viewmodel.ItemFilterGroupVM" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{itemViewModel.position==itemViewModel.selectedItemsGroupIndex ? @color/c_F5F5F5 : @color/white}"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/filter_item_height"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@{itemViewModel.item.shopCategoryName}"
+            android:textColor="@{itemViewModel.position==itemViewModel.selectedItemsGroupIndex ? @color/c_main : @color/filter_item_text_normal}"
+            android:textSize="@dimen/filter_item_text_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/filter_item_bottom_divider" />
+    </LinearLayout>
+</layout>

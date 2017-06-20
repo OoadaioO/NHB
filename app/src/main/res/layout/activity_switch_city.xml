@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.SwitchCityVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_F2F2F2"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/city_title"
+            layout="@layout/titlebar_normal"
+            bind:viewModel="@{viewModel}" />
+
+        <!-- 城市数据展示区 -->
+        <RelativeLayout
+            android:id="@+id/city_rl_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <!-- 省一级列表 -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/city_rcv_itemsGroup"
+                style="@style/filter_content_lv"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                bind:beans="@{viewModel.provinceList}"
+                bind:itemClickListener="@{viewModel.clickProvince}"
+                bind:itemVMFactory="@{viewModel.provinceFactory}" />
+
+            <!-- 市二级列表 -->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/city_rcv_itemsChild"
+                style="@style/filter_content_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/city_rcv_itemsGroup"
+                android:background="@color/c_F5F5F5"
+                bind:beans="@{viewModel.cityList}"
+                bind:itemClickListener="@{viewModel.clickCity}"
+                bind:itemVMFactory="@{viewModel.cityFactory}" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

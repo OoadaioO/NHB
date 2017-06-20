@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.text.TextUtils" />
+
+        <import type="com.nhb.app.custom.R" />
+
+        <import type="android.view.View" />
+
+        <import type="java.lang.String" />
+
+        <import type="java.lang.Integer" />
+
+        <import type="com.nhb.app.custom.utils.ResourceUtil" />
+
+        <import type="com.nhb.app.custom.constant.Constants" />
+
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.MemberCardDetailVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{TextUtils.equals(Constants.ITEM_SERVICE_TYPE.SERVICE_HOME, viewModel.memberCard.itemType)?@color/white:@color/c_F2F2F2}"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/titlebar_normal"
+            bind:viewModel="@{viewModel}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_bar"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/bg_content_corner_6"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="@{viewModel.memberCard.itemName}"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_13" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="27dp"
+                android:gravity="center"
+                android:text="@{String.format(ResourceUtil.getString(R.string.store_exclusive),viewModel.memberCard.storeName)}"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/font_20" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="13dp"
+                android:gravity="center"
+                android:text="@{String.format(ResourceUtil.getString(R.string.card_used_num),viewModel.memberCard.currentCount,viewModel.memberCard.totalUseCount)}"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:text="@{String.format(ResourceUtil.getString(R.string.card_validity_time),viewModel.memberCard.retireTime)}"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="19dp"
+                android:gravity="center"
+                android:text="@{String.format(ResourceUtil.getString(R.string.service_hotline),viewModel.memberCard.storePhone)}"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="27dp"
+                android:layout_marginLeft="77dp"
+                android:layout_marginRight="79dp"
+                android:layout_marginTop="24dp"
+                android:background="@{viewModel.isEnable?@drawable/bg_content_corner_4_red:@drawable/btn_member_card_unable}"
+                android:gravity="center"
+                android:onClick="@{viewModel.clickUseCard}"
+                android:paddingBottom="10dp"
+                android:paddingTop="7dp"
+                android:text="@{viewModel.isEnable? @string/immediate_use : @string/have_used}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/title_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="25dp"
+            bind:error="@{@drawable/icon_gray_logo}"
+            bind:imageUrl="@{viewModel.memberCard.storePic}"
+            bind:placeHolder="@{@drawable/icon_gray_logo}"
+            bind:round="@{true}" />
+    </RelativeLayout>
+</layout>

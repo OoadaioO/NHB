@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!-- listView/gridView/recyclerView itemView template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="itemViewModel"
+            type="com.nhb.app.custom.viewmodel.ItemCommonSearchHistoryVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/sel_common_search_history_item_bg">
+
+        <ImageView
+            android:id="@+id/searchHistory_iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/search_icon" />
+
+        <TextView
+            android:id="@+id/searchHistory_tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/searchHistory_iv_icon"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{itemViewModel.item}"
+            android:textColor="@color/c_404040"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/c_EEEEEE" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.CommonSearchVM" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/base_bg_color"
+        android:orientation="vertical">
+
+        <!-- 搜索框 -->
+        <com.nhb.app.custom.common.view.CommonSearchLayout
+            android:id="@+id/commonSearch_csl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <ScrollView
+            android:id="@+id/common_search_scl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/commonSearch_csl"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="@string/common_search_my_search_history"
+                    android:textColor="@color/c_9B9B9B"
+                    android:textSize="12sp" />
+
+                <View
+                    android:id="@+id/commonSearch_divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/c_EEEEEE" />
+
+                <!-- 搜索历史 -->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/commonSearch_lv_searchHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/base_bg_color"
+                    android:cacheColorHint="@null"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:fadingEdge="none"
+                    android:fastScrollEnabled="false"
+                    android:footerDividersEnabled="false"
+                    android:headerDividersEnabled="false"
+                    android:listSelector="@null"
+                    android:scrollbars="none"
+                    android:smoothScrollbar="true"
+                    bind:beans="@{viewModel.searchHistoryList}"
+                    bind:itemClickListener="@{viewModel.clickHistoryItem}"
+                    bind:itemVMFactory="@{viewModel.historyItemVMFactory}" />
+
+                <RelativeLayout
+                    android:id="@+id/commonSearch_lv_clearHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:background="@drawable/sel_common_search_history_item_bg"
+                    android:onClick="@{viewModel.clickClearHistory}"
+                    android:visibility="@{viewModel.clearHistoryShow ? View.VISIBLE:View.GONE}">
+
+                    <TextView
+                        android:id="@+id/clearSearchHistory_tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/bg_btn_clear_search_history"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="@string/common_search_clear_search_history"
+                        android:textColor="@color/c_9B9B9B"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/c_EEEEEE" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <com.nhb.app.custom.common.view.LoadingStatusView
+            android:id="@+id/commonSearch_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/commonSearch_csl"
+            android:visibility="gone" />
+    </RelativeLayout>
+</layout>

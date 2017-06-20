@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.HomeHeaderVM"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/template3_ll_root"
+        style="@style/template_layout">
+
+        <TextView
+            android:id="@+id/template3_tv_title"
+            style="@style/template_title"
+            android:visibility="gone"/>
+
+        <!-- 宽高比2:1,左右均分,左边正方形 -->
+        <LinearLayout
+            android:id="@+id/template3_ll_images"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/template3_rl_itemA"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/template3_iv_imageA"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/c_D5D5D5"
+                    android:onClick="@{viewModel.cliclTemplate}"
+                    android:scaleType="centerCrop"
+                    bind:imageUrl="@{viewModel.templateSubItems.size()==3 ? viewModel.templateSubItems.get(0).itemPic : null}"/>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/template3_dividerVCenter"
+                style="@style/common_vertical_divider_gray"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/template3_iv_imageB"
+                    style="@style/template_image_vertical_split"
+                    android:onClick="@{viewModel.cliclTemplate}"
+                    bind:imageUrl="@{viewModel.templateSubItems.size()==3 ? viewModel.templateSubItems.get(1).itemPic : null}"/>
+
+                <View
+                    android:id="@+id/template3_dividerHRight"
+                    style="@style/common_horizontal_divider_gray"/>
+
+                <ImageView
+                    android:id="@+id/template3_iv_imageC"
+                    style="@style/template_image_vertical_split"
+                    android:onClick="@{viewModel.cliclTemplate}"
+                    bind:imageUrl="@{viewModel.templateSubItems.size()==3 ? viewModel.templateSubItems.get(2).itemPic : null}"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_gray_1"/>
+
+        <View style="@style/line_gray_15"/>
+
+        <View style="@style/line_gray_1"/>
+    </LinearLayout>
+</layout>

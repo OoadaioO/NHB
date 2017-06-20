@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.ItemsListCategoryVM" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <!-- 搜索框 -->
+        <include
+            android:id="@+id/items_search"
+            layout="@layout/titlebar_search_simple"
+            bind:viewModel="@{viewModel}" />
+
+        <LinearLayout
+            android:id="@+id/list_item_ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/commonSearchResult_csl"
+            android:orientation="horizontal" />
+    </LinearLayout>
+</layout>

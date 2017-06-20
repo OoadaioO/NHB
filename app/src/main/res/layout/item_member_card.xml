@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?><!-- listView/gridView/recyclerView itemView template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.text.TextUtils" />
+
+        <import type="com.nhb.app.custom.R" />
+
+        <import type="android.view.View" />
+
+        <import type="java.lang.String" />
+
+        <import type="java.lang.Integer" />
+
+        <import type="com.nhb.app.custom.utils.ResourceUtil" />
+
+        <variable
+            name="itemViewModel"
+            type="com.nhb.app.custom.viewmodel.ItemMemberCardVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            bind:backgroundRes="@{itemViewModel.isEnable?itemViewModel.getItemBg:itemViewModel.unEnableBgColor}">
+
+            <RelativeLayout
+                android:id="@+id/card_rl_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/card_iv_storeImg"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:scaleType="centerInside"
+                    bind:imageUrl="@{itemViewModel.item.storePic}"
+                    bind:round="@{true}" />
+
+                <TextView
+                    android:id="@+id/card_tv_storeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/card_iv_storeImg"
+                    android:text="@{itemViewModel.item.storeName}"
+                    android:textColor="@{itemViewModel.isEnable?@color/white:@color/c_666666}"
+                    android:textSize="@dimen/font_16" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/card_tv_buyTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_rl_top"
+                android:layout_marginLeft="99dp"
+                android:layout_marginTop="18dp"
+                android:gravity="center|left"
+                android:text="@{String.format(ResourceUtil.getString(R.string.card_buy_time),itemViewModel.item.createTime)}"
+                android:textColor="@{itemViewModel.isEnable?@color/white:@color/c_666666}"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/card_tv_expireTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_tv_buyTime"
+                android:layout_marginLeft="99dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center|left"
+                android:text="@{String.format(ResourceUtil.getString(R.string.card_expire_time),itemViewModel.item.retireTime)}"
+                android:textColor="@{itemViewModel.isEnable?@color/white:@color/c_666666}"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/card_tv_useNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_tv_expireTime"
+                android:layout_marginLeft="99dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center|left"
+                android:text="@{String.format(ResourceUtil.getString(R.string.card_used_num),itemViewModel.item.currentCount,itemViewModel.item.totalUseCount)}"
+                android:textColor="@{itemViewModel.isEnable?@color/white:@color/c_666666}"
+                android:textSize="@dimen/font_14" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_below="@+id/card_tv_expireTime"
+                android:layout_marginTop="45dp">
+
+                <TextView
+                    android:id="@+id/card_tv_cardNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="26dp"
+                    android:text="@{String.format(ResourceUtil.getString(R.string.card_number),itemViewModel.item.orderId)}"
+                    android:textColor="@{itemViewModel.isEnable?@color/white:@color/c_666666}"
+                    android:textSize="@dimen/font_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="@{itemViewModel.isEnable?@drawable/btn_member_card_enable:@drawable/btn_member_card_unable}"
+                    android:gravity="center"
+                    android:onClick="@{itemViewModel.clickUseCard}"
+                    android:padding="3dp"
+                    android:text="@{itemViewModel.isEnable? @string/enable_user : @string/have_used}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_15" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

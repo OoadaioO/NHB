@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.interfaces.ITitleBarSearch"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rl_root"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/titlebar_height"
+                    android:background="@color/titlebar_bg_white">
+
+        <TextView
+            android:id="@+id/titleBarHome_tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/ic_arrow_downward"
+            android:gravity="center_vertical"
+            android:onClick="@{viewModel.clickSelectCity}"
+            android:paddingLeft="15dp"
+            android:text="@{viewModel.locationArea}"
+            android:textColor="@color/c_FF9933"
+            android:textSize="@dimen/font_14" />
+
+        <LinearLayout
+            android:id="@+id/titleBarHome_ll_Search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="13dp"
+            android:layout_toLeftOf="@+id/titleBarHome_rl_msg"
+            android:layout_toRightOf="@+id/titleBarHome_tv_city"
+            android:background="@drawable/bg_home_titlebar_btn_search"
+            android:gravity="left|center_vertical"
+            android:onClick="@{viewModel.clickSearch}"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/titleBarHome_tv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_home_search"
+                android:drawablePadding="7dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="16dp"
+                android:text="@{viewModel.searchContent}"
+                android:textColor="@color/c_C9C9CA"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/titleBarHome_rl_msg"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:onClick="@{viewModel.clickMsg}"
+            android:paddingRight="15dp">
+
+            <RelativeLayout
+                android:layout_width="23dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/titleBarHome_img_msg"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_home_msg"/>
+
+                <ImageView
+                    android:id="@+id/titleBarHome_img_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/common_red_badge"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/titleBarTopicHome_divider"
+            style="@style/common_titlebar_bottom_divider"
+            android:background="@color/c_EEEEEE"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</layout>

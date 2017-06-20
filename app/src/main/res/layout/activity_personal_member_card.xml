@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.MemberCardVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/order_detail_title"
+            layout="@layout/titlebar_normal"
+            bind:viewModel="@{viewModel}" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/member_card_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@color/white"
+            app:tabIndicatorColor="@color/c_main"
+            app:tabIndicatorHeight="2dp"
+            app:tabSelectedTextColor="@color/c_main"
+            app:tabTextColor="@color/c_999999" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/member_card_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</layout>

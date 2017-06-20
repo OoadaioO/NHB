@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.MainTabVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include_main_menu"
+            layout="@layout/layout_main_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            bind:viewModel="@{viewModel}" />
+
+        <View
+            android:id="@+id/main_bottom_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_above="@id/include_main_menu"
+            android:background="@color/base_divider_heavy" />
+
+        <FrameLayout
+            android:id="@+id/main_ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/main_bottom_divider"
+            android:background="@android:color/white"
+            android:orientation="horizontal" />
+    </RelativeLayout>
+</layout>

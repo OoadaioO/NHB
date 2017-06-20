@@ -1,0 +1,285 @@
+<resources>
+    <string name="app_name">年惠宝</string>
+    <string name="press_back_again">再按一次退出年惠宝</string>
+
+    <string name="io_exception">文件存储失败,请检查您的SD卡状态</string>
+    <string name="login_out_of_date">登录已过期，请重新登录！</string>
+    <string name="user_authentication_failue">身份验证失败</string>
+    <string name="relogin">重新登录</string>
+    <string name="hint_loading">正在加载&#8230;</string>
+
+    <string name="pay_order_success">支付成功</string>
+    <string name="pay_order_fail">支付失败</string>
+    <string name="pay_order_cancel">取消支付</string>
+
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="hint">提示</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    <string name="no_data_now">暂时没有相关数据</string>
+
+    <!-- loadingStatusView相关start -->
+    <string name="loading_again">重新加载</string>
+    <string name="loading_failure">网络或服务器开小差,请稍后再试~！</string>
+    <string name="loading_empty">页面丢失\n页面走失到外太空啦，不如去别的页面逛逛？</string>
+    <!-- loadingStatusView相关end   -->
+    <!-- 版本更新start -->
+    <string name="download_failure">下载失败</string>
+    <string name="sd_card_cannot_use">请您检查SD卡状态</string>
+    <!-- 版本更新end   -->
+
+    <string name="menu_bar_home">首页</string>
+    <string name="menu_bar_items">商品</string>
+    <string name="menu_bar_personal">我的</string>
+    <string name="menu_bar_more">更多</string>
+
+    <!--home-->
+    <string name="common_search_hint">输入商品</string>
+    <string name="home_hot_area">热门推荐</string>
+    <string name="home_you_like">猜你喜欢</string>
+    <string name="message_notice">消息通知</string>
+    <string name="auto_location">自动定位</string>
+    <string name="select_city">选择地区</string>
+    <string name="already_location">已定位:</string>
+    <string name="support_location_area">支持的地区</string>
+    <string name="location_failed">该地区暂未开通本服务!</string>
+    <string name="location_area_failed">定位失败,请重新选择区域!</string>
+    <string name="please_select_city">手动切换城市</string>
+    <string name="open_area_failed">没有开通该地区或定位失败,请重新手动切换城市!</string>
+
+    <!-- 筛选器相关 -->
+    <string name="filter_tab_items_default">综合排序</string>
+    <string name="filter_tab_sales_default">销量优先</string>
+
+    <!--我的-->
+    <string name="personal_order">我的订单</string>
+    <string name="personal_address">收货地址</string>
+    <string name="personal_collection">我的收藏</string>
+    <string name="personal_member">我的会员</string>
+    <string name="personal">我</string>
+    <string name="setting">设置</string>
+
+    <!--个人信息-->
+    <string name="personal_profile_city">地区</string>
+    <string name="personal_profile_phone">手机号</string>
+    <string name="personal_profile_intro">简介</string>
+    <string name="personal_profile_logout">退出当前账号</string>
+    <string name="logout_success">退出成功</string>
+
+    <!--订单-->
+    <string name="order_detail">订单详情</string>
+    <string name="order_status_finish">已完成</string>
+    <string name="order_status_ongoing">进行中</string>
+    <string name="order_status_cancel">已取消</string>
+    <string name="order_success">交易成功</string>
+    <string name="order_ongoing">交易进行中</string>
+    <string name="order_fail">交易失败</string>
+    <string name="order_pay_status_going">0</string>
+    <string name="order_pay_status_success">1</string>
+    <string name="order_pay_status_fail">2</string>
+    <string name="order_items_num">%s人购买</string>
+    <string name="order_create_time">下单时间:%s</string>
+    <string name="order_address">地址: %s</string>
+    <string name="total_price">商品总价</string>
+    <string name="pre_price">优惠价格</string>
+    <string name="real_price">实付款</string>
+    <string name="order_id">订单编号: %s</string>
+    <string name="finish_time">成交时间: %s</string>
+    <string name="payment_way">支付方式: %s</string>
+    <string name="phone">手机号码: %s</string>
+    <string name="contact_us">若有疑问,请联系我们</string>
+    <string name="order_price">￥%s</string>
+    <string name="order_pre_price">-￥%s</string>
+    <string name="zero">-￥0.0</string>
+    <string name="pay_way_wx">wx</string>
+    <string name="pay_way_zfb">alipay</string>
+    <string name="payment_way_wx">支付方式：微信支付</string>
+    <string name="payment_way_zfb">支付方式：支付宝支付</string>
+
+    <string name="sex_man">1</string>
+    <string name="sex_woman">0</string>
+    <string name="man">%s先生</string>
+    <string name="woman">%s女士</string>
+
+    <!--地址-->
+    <string name="add_address">添加地址</string>
+    <string name="edit_address">修改地址</string>
+    <string name="contact_name">联系人</string>
+    <string name="address_man">先生</string>
+    <string name="address_woman">女士</string>
+    <string name="contact_method">联系方式</string>
+    <string name="delivery_address">收货地址</string>
+    <string name="delivery_address_detail">详细地址</string>
+    <string name="delivery_province">所在地区</string>
+    <string name="finish">完成</string>
+    <string name="address_hint">小区/写字楼/学校等 \n 详细地址 (如门牌号) </string>
+    <string name="address_edit">编辑</string>
+    <string name="address_delete">删除</string>
+    <string name="address_default">设为默认地址</string>
+    <string name="province_city_area">省,市,区</string>
+    <string name="area_code">邮政编码</string>
+    <string name="please_select_area">请选择区域</string>
+
+    <string name="address_is_not_empty">姓名,电话,地址不能为空,请重试</string>
+    <string name="address_pre_is_not_empty">请选择所在地区</string>
+    <string name="operate_success">修改成功</string>
+    <string name="operate_fail">修改失败</string>
+    <string name="add_success">添加成功</string>
+    <string name="add_fail">添加失败</string>
+    <string name="confirm_delete">确认要删除吗?</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_fail">删除失败</string>
+
+    <string name="collection_success">操作成功</string>
+    <string name="collection_fail">操作失败</string>
+
+    <!--会员卡-->
+    <string name="enable_user">去使用</string>
+    <string name="have_used">已过期</string>
+    <string name="card_buy_time">购买时间: %s</string>
+    <string name="card_expire_time">到期时间: %s</string>
+    <string name="card_used_num">使用次数: %1$s/%2$s</string>
+    <string name="card_number">卡号: %1$s</string>
+    <string name="operate_confirm">操作确认</string>
+    <string name="sure_select_address">确定要将当前地址作为服务地址吗?</string>
+
+    <string name="hint_to_store">您想对店家说什么?</string>
+    <string name="edit_hint_to_store">在此输入备注哦</string>
+    <string name="use_card_success">服务消费成功,谢谢使用!</string>
+    <string name="qr_code_consumer">扫描二维码就可以消费啦~</string>
+    <string name="generate_qr_code_failed">生成二维码失败</string>
+
+    <string name="member_card">会员卡</string>
+    <string name="immediate_use">立即使用</string>
+    <string name="store_exclusive">%s专属</string>
+    <string name="card_validity_time">有效期: %s</string>
+    <string name="service_hotline">客服电话: %s</string>
+
+
+    <!--更多-->
+    <string name="clear_cache">清除缓存</string>
+    <string name="check_new_version">版本更新</string>
+    <string name="user_protocol">用户协议</string>
+    <string name="using_help">使用帮助</string>
+    <string name="about_us">关于我们</string>
+    <string name="customer_service_phone">客服电话</string>
+    <string name="give_us_high_praise">给我们好评</string>
+    <string name="our_cooperation">我要合作</string>
+    <string name="invite_friend">邀请好友</string>
+    <string name="submit_clear_cache">确定要清除本地缓存数据？</string>
+    <string name="toast_clear_cache_success">清理成功</string>
+    <string name="personal_item_clear_cache">清除缓存（%s）</string>
+    <string name="feedback">意见反馈</string>
+
+    <!--清除缓存-->
+    <string name="cache_no_need_clean">没有缓存</string>
+    <string name="cache_clean_failed">清除缓存失败</string>
+    <string name="cache_clean_result">缓存清除成功</string>
+
+    <string name="prompt">提示</string>
+
+    <string name="find_new_version">发现新版本</string>
+    <string name="is_new_version">已经是最新版本了,不用升级了!</string>
+    <string name="new_version">最新版本:</string>
+    <string name="update_des">更新内容</string>
+    <string name="later_to_say">稍后再说</string>
+    <string name="update_now">立即更新</string>
+    <string name="app_desc">年惠宝</string>
+
+    <!--about us-->
+    <string name="contact_us_qq">QQ: 145268901</string>
+    <string name="contact_us_wx">微信: ninhuibao2016</string>
+    <string name="contact_us_twitter">微博: 年惠宝</string>
+    <string name="contact_us_sina">微博: 年惠宝</string>
+
+    <!--快速登录-->
+    <string name="login">快速登录</string>
+    <string name="verify_note">为了确保服务质量,请先验证您的手机</string>
+    <string name="phone_number">手机号</string>
+    <string name="verify_code">验证码</string>
+    <string name="get_verify_code">获取验证</string>
+    <string name="cannot_get_code">没有收到?</string>
+    <string name="login_quick">立即登录</string>
+    <string name="login_yy_code">拨打客服电话获取验证码</string>
+    <string name="login_protocol">点击登录,即表示您同意《年惠宝使用协议》</string>
+    <string name="login_hint">温馨提示</string>
+    <string name="login_hit_note">请检查手机号是否正确,如果正确但是长时间没有收到验证码短信,可能是因为短信运营网络不太给力,请耐心等待后重新获取。</string>
+    <string name="unit_second">秒</string>
+    <string name="get_auth_code">获取验证码</string>
+    <string name="tip_wrong_number">手机号格式错误,请重新输入</string>
+    <string name="auth_code_tip_wait">请等待验证码短信...</string>
+    <string name="get_verify_code_success">验证码已发送</string>
+    <string name="get_verify_code_fail">验证码发送失败</string>
+    <string name="get_verify_code_yy_success">语音验证码发送成功</string>
+    <string name="get_verify_code_yy_fail">语音验证码发送失败</string>
+    <string name="auth_code_tip_empty_number">手机号码不能为空</string>
+    <string name="auth_code_tip_error">验证码错误</string>
+    <string name="input_identify_code">请输入验证码</string>
+    <string name="registered_success">登录成功！</string>
+    <string name="registered_fail">登录成功,请重新登录！</string>
+
+    <!--支付-->
+    <string name="user_pay">收银台</string>
+    <string name="choice_pay_method">方式支付</string>
+    <string name="suggestion_pay_method">(推荐)</string>
+    <string name="pay_method_zfb">支付宝</string>
+    <string name="pay_method_qq">QQ支付</string>
+    <string name="pay_method_wx">微信支付</string>
+    <string name="pay_method_apple_pay">Apple Pay</string>
+    <string name="pay_method_wx_des">通过微信进行支付</string>
+    <string name="pay_method_alipay_des">推荐支付宝用户使用</string>
+    <string name="pay_method_qq_des">简单，安全，快递</string>
+    <string name="pay_method_bfb_des">支持所有银行卡快捷支付</string>
+    <string name="confirm_pay">确认支付%s元</string>
+    <string name="pay_price">￥%s</string>
+
+    <!--支付完成-->
+    <string name="pay_success">支付成功</string>
+    <string name="pay_fail">支付失败</string>
+    <string name="order_pay_success">订单支付成功</string>
+    <string name="order_pay_fail">订单支付失败</string>
+    <string name="pay_order_id">订单编号:  </string>
+    <string name="pay_order_create_time">下单时间:</string>
+    <string name="store_phone">手机号码:</string>
+    <string name="receiver_name">收    货    人  :</string>
+    <string name="receiver_phone">联系方式:</string>
+    <string name="receiver_address">收货地址:</string>
+
+    <string name="switch_city">切换城市</string>
+    <string name="select_area">选择地区</string>
+    <string name="local_city">当前城市:</string>
+    <string name="switch_area">切换</string>
+
+    <!--搜索-->
+    <string name="common_search_my_search_history">我的搜索历史</string>
+    <string name="common_search_clear_search_history">清空全部历史记录</string>
+    <string name="common_search_tab_items">商品</string>
+
+    <!--商品-->
+    <string name="items_detail">商品详情</string>
+    <string name="voucher">%s元</string>
+    <string name="has_sold">已售出(%s)</string>
+    <!--<string name="item_detail_url">http://api.seemgo.com/productDetail.html?itemId=%1$s</string>-->
+    <string name="item_detail_url">nianhuibao_h5/productDetail.html?itemId=%1$s</string>
+
+    <!--确认订单-->
+    <string name="create_order">确认订单</string>
+    <string name="number">数量</string>
+    <string name="count_price">总价</string>
+    <string name="subtract">-</string>
+    <string name="add">+</string>
+    <string name="discount">优惠和折扣</string>
+    <string name="pay_for">还需支付</string>
+
+    <!--意见反馈-->
+    <string name="write_feedback">请填写您的意见或建议:</string>
+    <string name="write_phone">请填写您的联系方式:</string>
+    <string name="input_hint">请输入......</string>
+    <string name="submit">提交</string>
+    <string name="contact_server_customer">联系客服</string>
+    <string name="submit_success">提交成功,谢谢您的反馈!</string>
+
+    <string name="skip">跳过</string>
+</resources>

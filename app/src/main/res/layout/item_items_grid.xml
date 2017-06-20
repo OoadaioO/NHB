@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><!-- listView/gridView/recyclerView itemView template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.text.TextUtils"/>
+
+        <import type="com.nhb.app.custom.R"/>
+
+        <import type="android.view.View"/>
+
+        <import type="java.lang.String"/>
+
+        <import type="com.nhb.app.custom.utils.ResourceUtil"/>
+
+        <variable
+            name="itemViewModel"
+            type="com.nhb.app.custom.viewmodel.ItemItemsGridVM"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/c_F2F2F2">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/items_img"
+                android:layout_width="167dp"
+                android:layout_height="162dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="11dp"
+                android:scaleType="centerInside"
+                bind:imageUrl="@{itemViewModel.item.itemPic}"/>
+
+            <TextView
+                android:id="@+id/items_des_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/items_img"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text="@{itemViewModel.item.itemName}"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/font_17"/>
+
+            <TextView
+                android:id="@+id/items_price_instore_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/items_des_tv"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="8dp"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:maxLines="2"
+                android:text="@{itemViewModel.item.itemDesc}"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/font_17"/>
+
+            <LinearLayout
+                android:id="@+id/items_ll_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/items_price_instore_tv"
+                android:layout_marginBottom="11dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/items_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@{String.format(ResourceUtil.getString(R.string.pay_price),itemViewModel.item.price)}"
+                    android:textColor="@color/c_FF1C00"
+                    android:textSize="@dimen/font_14"/>
+
+                <TextView
+                    android:id="@+id/items_original_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@{itemViewModel.getPriceInStore}"
+                    android:textColor="@color/c_999999"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/items_user_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/items_ll_price"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="17dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingRight="10dp"
+                android:text="@{String.format(ResourceUtil.getString(R.string.has_sold),itemViewModel.item.buyCount)}"
+                android:textColor="@color/c_999999"
+                android:textSize="@dimen/font_13"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

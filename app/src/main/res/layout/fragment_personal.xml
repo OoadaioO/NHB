@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.text.TextUtils"/>
+
+        <import type="java.lang.Integer"/>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.PersonalFragmentVM"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_F2F2F2"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/personal_sv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarThumbVertical="@drawable/scrollbar_thumb_vertical"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- header区域-->
+                <RelativeLayout
+                    android:id="@+id/personal_rl_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:onClick="@{viewModel.clickPersonalInfo}">
+
+                    <ImageView
+                        android:id="@+id/personal_iv_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_personal_header"/>
+
+                    <ImageView
+                        android:id="@+id/personal_iv_portrait"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="19dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="21dp"
+                        android:src="@drawable/ic_user_avatar_default_small"
+                        bind:error="@{@drawable/ic_user_avatar_default_small}"
+                        bind:imageUrl="@{viewModel.personalData.headImg}"
+                        bind:placeHolder="@{@drawable/ic_user_avatar_default_small}"
+                        bind:round="@{true}"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/personal_iv_portrait"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/personal_tv_nickname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@{viewModel.personalData.nickName}"
+                            android:textColor="@color/c_333333"
+                            android:textSize="@dimen/font_18"/>
+
+                        <TextView
+                            android:id="@+id/personal_tv_note"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="40dp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@{viewModel.personalData.userNote}"
+                            android:textColor="@color/c_333333"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/personal_item_iv_arrow"
+                        android:src="@drawable/ic_arrow_right_white_personal"
+                        />
+                </RelativeLayout>
+
+                <!--订单-->
+                <RelativeLayout
+                    android:id="@+id/personal_rl_order"
+                    style="@style/personal_item_rl"
+                    android:layout_marginTop="10dp"
+                    android:onClick="@{viewModel.clickPersonalOrder}">
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:drawableLeft="@drawable/ic_personal_order"
+                        android:text="@string/personal_order"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                    <ImageView
+                        android:id="@+id/personal_iv_order_badge"
+                        style="@style/common_red_badge"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="33.5dp"
+                        android:visibility="gone"/>
+                    <!--android:visibility="@{!TextUtils.isEmpty(viewModel.personalData.orderNum) &amp;&amp; Integer.valueOf(viewModel.personalData.orderNum)>0 ? View.VISIBLE:View.GONE}" />-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="15dp"
+                        android:background="@color/base_horizontal_divider"/>
+                </RelativeLayout>
+
+                <!--地址-->
+                <RelativeLayout
+                    android:id="@+id/personal_rl_address"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickPersonalAddress}">
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:drawableLeft="@drawable/ic_personal_address"
+                        android:text="@string/personal_address"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                    <ImageView
+                        android:id="@+id/personal_iv_address_badge"
+                        style="@style/common_red_badge"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="33.5dp"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <!--收藏-->
+                <RelativeLayout
+                    android:id="@+id/personal_rl_collection"
+                    style="@style/personal_item_rl"
+                    android:layout_marginTop="10dp"
+                    android:onClick="@{viewModel.clickPersonalCollection}">
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:drawableLeft="@drawable/ic_personal_collection"
+                        android:text="@string/personal_collection"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                    <ImageView
+                        android:id="@+id/personal_iv_collection_badge"
+                        style="@style/common_red_badge"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="33.5dp"
+                        android:visibility="gone"/>
+                    <!--android:visibility="@{!TextUtils.isEmpty(viewModel.personalData.collectionNum) &amp;&amp; Integer.valueOf(viewModel.personalData.collectionNum)>0 ? View.VISIBLE:View.GONE}" />-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="15dp"
+                        android:background="@color/base_horizontal_divider"/>
+                </RelativeLayout>
+
+                <!--会员-->
+                <RelativeLayout
+                    android:id="@+id/personal_rl_member"
+                    style="@style/personal_item_rl"
+                    android:onClick="@{viewModel.clickPersonalMember}">
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:drawableLeft="@drawable/ic_personal_member"
+                        android:text="@string/personal_member"/>
+
+                    <ImageView style="@style/personal_item_iv_arrow"/>
+
+                    <ImageView
+                        android:id="@+id/personal_iv_member_badge"
+                        style="@style/common_red_badge"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="33.5dp"
+                        android:visibility="gone"/>
+                    <!--android:visibility="@{!TextUtils.isEmpty(viewModel.personalData.memberNum) &amp;&amp; Integer.valueOf(viewModel.personalData.memberNum)>0 ? View.VISIBLE:View.GONE}" />-->
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

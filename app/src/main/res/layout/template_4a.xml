@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 5.9.0 豆腐块四图模板 -->
+<LinearLayout
+    android:id="@+id/template4A_ll_root"
+    style="@style/template_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/template4A_tv_title"
+        style="@style/template_title" />
+
+    <!-- 宽高比750:200,水平四等分 -->
+    <LinearLayout
+        android:id="@+id/template4A_ll_images"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/template4A_iv_imageA"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template4A_dividerVLeft"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template4A_iv_imageB"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template4A_dividerVCenter"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template4A_iv_imageC"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template4A_dividerVRight"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template4A_iv_imageD"
+            style="@style/template_image_horizontal_split" />
+    </LinearLayout>
+
+</LinearLayout>

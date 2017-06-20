@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.text.TextUtils"/>
+
+        <import type="com.nhb.app.custom.R"/>
+
+        <import type="android.view.View"/>
+
+        <import type="java.lang.String"/>
+
+        <import type="java.lang.Integer"/>
+
+        <import type="com.nhb.app.custom.utils.ResourceUtil"/>
+
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.UserPayVM"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_F2F2F2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/titlebar_normal"
+                bind:viewModel="@{viewModel}"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="26dp">
+
+                <TextView
+                    android:id="@+id/pay_tv_order_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="@{viewModel.itemName}"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/font_17"/>
+
+                <TextView
+                    android:id="@+id/pay_tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/white"
+                    android:text="@{String.format(ResourceUtil.getString(R.string.pay_price),viewModel.orderPrice)}"
+                    android:textColor="@color/c_FF331A"
+                    android:textSize="@dimen/font_20"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:text="@string/choice_pay_method"
+                    android:textColor="@color/c_323232"
+                    android:textSize="@dimen/font_16"/>
+            </RelativeLayout>
+
+            <View style="@style/line_black_1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/pay_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--微信支付-->
+                    <RelativeLayout
+                        android:id="@+id/rl_wechat_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@color/white"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/img_icon_pay_wx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_pay_wx"/>
+
+                        <TextView
+                            android:id="@+id/tv_icon_pay_wx"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_toRightOf="@+id/img_icon_pay_wx"
+                            android:gravity="center"
+                            android:text="@string/pay_method_wx"
+                            android:textColor="@color/c_323232"
+                            android:textSize="@dimen/font_16"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/tv_icon_pay_wx"
+                            android:layout_marginRight="10dp"
+                            android:layout_toRightOf="@+id/tv_icon_pay_wx"
+                            android:gravity="center"
+                            android:text="@string/suggestion_pay_method"
+                            android:textColor="@color/c_A9A9A9"
+                            android:textSize="@dimen/font_14"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/img_icon_pay_wx"
+                            android:layout_below="@+id/tv_icon_pay_wx"
+                            android:layout_marginTop="2dp"
+                            android:layout_toRightOf="@+id/img_icon_pay_wx"
+                            android:gravity="center"
+                            android:text="@string/pay_method_wx_des"
+                            android:textColor="@color/c_999999"
+                            android:textSize="@dimen/font_12"/>
+
+                        <RadioButton
+                            android:id="@+id/user_wx_pay_radioBTN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:button="@drawable/selector_user_pay_radio_btn"
+                            android:checked="true"/>
+                    </RelativeLayout>
+
+                    <View style="@style/line_black_1"/>
+
+                    <!--支付宝-->
+
+                    <RelativeLayout
+                        android:id="@+id/rl_AliPay"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@color/white"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/img_icon_pay_zfb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="9dp"
+                            android:src="@drawable/icon_pay_alipay"/>
+
+                        <TextView
+                            android:id="@+id/tv_icon_pay_zfb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_toRightOf="@+id/img_icon_pay_zfb"
+                            android:gravity="center"
+                            android:text="@string/pay_method_zfb"
+                            android:textColor="@color/c_323232"
+                            android:textSize="@dimen/font_16"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_icon_pay_zfb"
+                            android:layout_marginTop="2dp"
+                            android:layout_toRightOf="@+id/img_icon_pay_zfb"
+                            android:gravity="center"
+                            android:text="@string/pay_method_alipay_des"
+                            android:textColor="@color/c_999999"
+                            android:textSize="@dimen/font_12"/>
+
+                        <RadioButton
+                            android:id="@+id/user_zfb_pay_radioBTN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:button="@drawable/selector_user_pay_radio_btn"
+                            android:checked="false"/>
+                    </RelativeLayout>
+
+                    <!--<View style="@style/line_black_1"/>-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:id="@+id/rl_qq_pay"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:background="@color/white"-->
+                        <!--android:paddingLeft="15dp"-->
+                        <!--android:paddingRight="15dp"-->
+                        <!--android:visibility="gone">-->
+
+                        <!--<ImageView-->
+                            <!--android:id="@+id/img_icon_pay_qq"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentLeft="true"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:layout_marginRight="9dp"-->
+                            <!--android:src="@drawable/icon_pay_qq"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/tv_icon_pay_qq"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginTop="12dp"-->
+                            <!--android:layout_toRightOf="@+id/img_icon_pay_qq"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/pay_method_qq"-->
+                            <!--android:textColor="@color/c_323232"-->
+                            <!--android:textSize="@dimen/font_16"/>-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_below="@+id/tv_icon_pay_qq"-->
+                            <!--android:layout_marginTop="3dp"-->
+                            <!--android:layout_toRightOf="@+id/img_icon_pay_qq"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="@string/pay_method_qq_des"-->
+                            <!--android:textColor="@color/c_999999"-->
+                            <!--android:textSize="@dimen/font_12"/>-->
+
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/user_qq_pay_radioBTN"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:layout_marginRight="10dp"-->
+                            <!--android:button="@drawable/selector_user_pay_radio_btn"-->
+                            <!--android:checked="false"/>-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<View style="@style/line_black_1"/>-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:id="@+id/rl_apple_pay"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="60dp"-->
+                        <!--android:background="@color/white"-->
+                        <!--android:paddingLeft="15dp"-->
+                        <!--android:paddingRight="15dp"-->
+                        <!--android:visibility="gone">-->
+
+                        <!--<ImageView-->
+                            <!--android:id="@+id/img_icon_pay_apple"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentLeft="true"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:layout_marginRight="9dp"-->
+                            <!--android:src="@drawable/icon_pay_apple"/>-->
+
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/user_apple_pay_radioBTN"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:layout_marginRight="10dp"-->
+                            <!--android:button="@drawable/selector_user_pay_radio_btn"-->
+                            <!--android:checked="false"/>-->
+                    <!--</RelativeLayout>-->
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:paddingBottom="6dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="6dp">
+
+            <TextView
+                android:id="@+id/user_pay_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_content_corner_6_main"
+                android:gravity="center"
+                android:onClick="@{viewModel.pay}"
+                android:paddingBottom="9dp"
+                android:paddingTop="11dp"
+                android:text="@{String.format(ResourceUtil.getString(R.string.confirm_pay),viewModel.orderPrice)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_20"/>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

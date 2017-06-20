@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 5.9.0 豆腐块三图模板 -->
+<LinearLayout
+    android:id="@+id/template3_ll_root"
+    style="@style/template_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/template3_tv_title"
+        style="@style/template_title" />
+
+    <!-- 宽高比2:1,左右均分,左边正方形 -->
+    <LinearLayout
+        android:id="@+id/template3_ll_images"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/template3_rl_itemA"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/template3_iv_imageA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/c_D5D5D5"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/template3ImageA_tv_seckillName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:text="--"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/font_14" />
+
+            <TextView
+                android:id="@+id/template3ImageA_tv_seckillTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/template3ImageA_tv_seckillName"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:text="--"
+                android:textColor="@color/c_main"
+                android:textSize="@dimen/font_11" />
+
+            <com.nhb.app.custom.common.view.CountDownView
+                android:id="@+id/template3ImageA_cv_seckillTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/template3ImageA_tv_seckillTip"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/template3_dividerVCenter"
+            style="@style/common_vertical_divider" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/template3_iv_imageB"
+                style="@style/template_image_vertical_split" />
+
+            <View
+                android:id="@+id/template3_dividerHRight"
+                style="@style/common_horizontal_divider" />
+
+            <ImageView
+                android:id="@+id/template3_iv_imageC"
+                style="@style/template_image_vertical_split" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

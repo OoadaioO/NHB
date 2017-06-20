@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.base.NHBViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_splash_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="119dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_splash_logo"/>
+
+            <TextView
+                android:id="@+id/tv_splash_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_splash_logo"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/c_4D4D4D"
+                android:textSize="@dimen/font_30"/>
+
+            <ImageView
+                android:id="@+id/iv_splash_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_splash_name"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="53dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_splash_des"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/splash_iv_ad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ad_bg"
+            android:visibility="gone"/>
+
+        <com.nhb.app.custom.common.view.DonutProgress
+            android:id="@+id/splash_bt_pass"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="17dp"
+            android:visibility="gone"
+            custom:donut_background_color="@color/c_99000000"
+            custom:donut_finished_color="@android:color/transparent"
+            custom:donut_finished_stroke_width="1dp"
+            custom:donut_max="50"
+            custom:donut_text="@string/skip"
+            custom:donut_text_color="@color/white"
+            custom:donut_text_size="10sp"
+            custom:donut_unfinished_color="@color/c_main"
+            custom:donut_unfinished_stroke_width="1dp"/>
+    </RelativeLayout>
+</layout>

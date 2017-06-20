@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Frame</string>
+
+    <string name="no_call_permission">没有打电话权限</string>
+    <string name="no_app">市场上暂时没有此APP</string>
+</resources>

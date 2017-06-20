@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?><!-- listView/gridView/recyclerView itemView template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.text.TextUtils"/>
+
+        <import type="com.nhb.app.custom.R"/>
+
+        <import type="android.view.View"/>
+
+        <import type="java.lang.String"/>
+
+        <import type="com.nhb.app.custom.utils.ResourceUtil"/>
+
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.AddressEditVM"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/order_detail_title"
+            layout="@layout/titlebar_right_text"
+            bind:viewModel="@{viewModel}"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <View style="@style/line_gray_10"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="33dp"
+                    android:gravity="center|left"
+                    android:text="@string/contact_name"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/font_18"/>
+
+                <EditText
+                    android:id="@+id/address_tv_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:afterTextChanged="@{viewModel.contactNameChange}"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|left"
+                    android:maxLines="1"
+                    android:text="@{viewModel.addressBean.realName}"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/font_17"/>
+            </LinearLayout>
+
+            <View style="@style/line_gray_1"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="88dp"
+                android:layout_marginTop="8dp"
+                android:onCheckedChanged="@{viewModel.sexChange}"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:button="@drawable/sex_radio_button_selector"
+                    android:checked="@{TextUtils.equals(viewModel.addressBean.gender,ResourceUtil.getString(R.string.sex_man))}"
+                    android:gravity="center|left"
+                    android:paddingLeft="30dp"
+                    android:text="@string/address_man"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/font_17"/>
+
+                <RadioButton
+                    android:id="@+id/address_rb_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="53dp"
+                    android:button="@drawable/sex_radio_button_selector"
+                    android:checked="@{TextUtils.equals(viewModel.addressBean.gender,ResourceUtil.getString(R.string.sex_woman))}"
+                    android:gravity="center|left"
+                    android:paddingLeft="30dp"
+                    android:text="@string/address_woman"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/font_17"/>
+            </RadioGroup>
+
+            <View style="@style/line_gray_1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center|left"
+                    android:text="@string/contact_method"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/font_18"/>
+
+                <EditText
+                    android:id="@+id/address_tv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:afterTextChanged="@{viewModel.phoneNameChange}"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|left"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:text="@{viewModel.addressBean.phone}"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/font_17"/>
+            </LinearLayout>
+
+            <View style="@style/line_gray_1"/>
+
+            <LinearLayout
+                android:id="@+id/address_ll_province"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center|left"
+                    android:text="@string/province_city_area"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/font_18"/>
+
+                <EditText
+                    android:id="@+id/address_tv_province"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:afterTextChanged="@{viewModel.provinceNameChange}"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|left"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:editable="false"
+                    android:text="@{viewModel.addressBean.address}"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/font_17"/>
+            </LinearLayout>
+
+            <View style="@style/line_gray_1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center|left"
+                    android:text="@string/area_code"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/font_18"/>
+
+                <EditText
+                    android:id="@+id/address_tv_area_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="center|left"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/font_17"/>
+            </LinearLayout>
+
+            <View style="@style/line_gray_1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center|left"
+                    android:text="@string/delivery_address"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/font_18"/>
+
+                <EditText
+                    android:id="@+id/address_tv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:afterTextChanged="@{viewModel.addressNameChange}"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="top|left"
+                    android:hint="@string/address_hint"
+                    android:lineSpacingExtra="5dp"
+                    android:maxLines="3"
+                    android:maxLength="50"
+                    android:text="@{viewModel.addressBean.address}"
+                    android:textColor="@color/c_666666"
+                    android:textColorHint="@color/c_cccccc"
+                    android:textSize="@dimen/font_17"/>
+            </LinearLayout>
+
+            <View style="@style/line_gray_1"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

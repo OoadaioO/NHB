@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.interfaces.ILoadMore" />
+        <!-- 固定写法,不要动 -->
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/footer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <ProgressBar
+            android:id="@+id/load_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center|top"
+            android:indeterminate="false"
+            android:indeterminateDrawable="@drawable/loading_more"/>
+    </FrameLayout>
+</layout>

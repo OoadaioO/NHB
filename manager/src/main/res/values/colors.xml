@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="appColor">#399EDE</color>
+    <color name="deepAppColor">#3586ba</color>
+    <color name="colorPrimary">#399EDE</color>
+    <color name="colorPrimaryDark">#399EDE</color>
+    <color name="colorAccent">#399EDE</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="c_333333">#333333</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_FF9933">#FF9933</color>
+    <color name="c_EBE764">#EBE764</color>
+    <color name="c_CCCCCC">#CCCCCC</color>
+    <color name="c_D8D8D8">#d8d8d8</color>
+    <color name="c_F0F0F0">#F0F0F0</color>
+    <color name="c_323232">#323232</color>
+    <color name="c_EEEEEE">#EEEEEE</color>
+    <color name="c_D0021B">#D0021B</color>
+    <color name="c_F2F2F2">#F2F2F2</color>
+    <color name="c_E5E5E5">#E5E5E5</color>
+    <color name="c_cacaca">#cacaca</color>
+</resources>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <import type="android.text.TextUtils" />
+
+        <import type="com.nhb.app.custom.R" />
+
+        <import type="android.view.View" />
+
+        <import type="java.lang.String" />
+
+        <import type="com.nhb.app.custom.utils.ResourceUtil" />
+
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.CreateOrderVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_F5F5F5">
+
+        <include
+            android:id="@+id/titlebar_normal"
+            layout="@layout/titlebar_normal"
+            bind:viewModel="@{viewModel}" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/titlebar_normal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/item_rl_name"
+                    style="@style/personal_item_rl"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:text="@{viewModel.itemName}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center"
+                        android:text="@{String.format(ResourceUtil.getString(R.string.pay_price),viewModel.itemPrice)}"
+                        android:textColor="@color/c_999999"
+                        android:textSize="@dimen/font_14" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="15dp"
+                        android:background="@color/base_horizontal_divider" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/line_gray_1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
+
+                <RelativeLayout
+                    android:id="@+id/item_rl_num"
+                    android:visibility="gone"
+                    style="@style/personal_item_rl">
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:text="@string/number" />
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:layout_toLeftOf="@+id/tv_item_num"
+                        android:background="@drawable/bg_content_corner_3"
+                        android:onClick="@{viewModel.clickSubtractView}"
+                        android:padding="8dp"
+                        android:text="@string/subtract" />
+
+                    <TextView
+                        android:id="@+id/tv_item_num"
+                        style="@style/personal_item_tv"
+                        android:layout_toLeftOf="@+id/tv_num_add"
+                        android:background="@drawable/btn_stroke_corner"
+                        android:padding="10dp"
+                        android:text="@{String.valueOf(viewModel.itemNum)}" />
+
+                    <TextView
+                        android:id="@+id/tv_num_add"
+                        style="@style/personal_item_tv"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/bg_content_corner_3"
+                        android:onClick="@{viewModel.clickAddView}"
+                        android:padding="8dp"
+                        android:text="@string/add" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="15dp"
+                        android:background="@color/base_horizontal_divider" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/item_rl_price"
+                    style="@style/personal_item_rl">
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:text="@string/count_price" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center"
+                        android:text="@{String.format(ResourceUtil.getString(R.string.pay_price),viewModel.totalPrice)}"
+                        android:textColor="@color/c_FF1C00"
+                        android:textSize="@dimen/font_14" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/line_gray_1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp" />
+
+                <RelativeLayout
+                    android:id="@+id/item_rl_discount"
+                    style="@style/personal_item_rl"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        style="@style/personal_item_tv"
+                        android:text="@string/discount" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:gravity="center"
+                        android:text="@{viewModel.discountPrice}"
+                        android:textColor="@color/c_323232"
+                        android:textSize="@dimen/font_14" />
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/item_rl_pay"
+            style="@style/personal_item_rl"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/tv_item_pay"
+                style="@style/personal_item_tv"
+                android:text="@string/pay_for" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tv_item_pay"
+                android:gravity="center"
+                android:text="@{String.format(ResourceUtil.getString(R.string.pay_price),viewModel.payPrice)}"
+                android:textColor="@color/c_main"
+                android:textSize="@dimen/font_18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_content_corner_4_red"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingTop="10dp"
+                android:text="@string/confirm"
+                android:textColor="@color/white"
+                android:onClick="@{viewModel.clickConfirm}"
+                android:textSize="@dimen/font_14" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

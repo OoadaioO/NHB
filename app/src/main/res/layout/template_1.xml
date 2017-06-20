@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 5.9.0 豆腐块单图模板 -->
+<LinearLayout
+    android:id="@+id/template1_ll_root"
+    style="@style/template_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/template1_tv_title"
+        style="@style/template_title" />
+
+    <!-- 宽高比750:300 -->
+    <ImageView
+        android:id="@+id/template1_iv_imageA"
+        style="@style/template_image_horizontal_fill"
+        android:layout_height="150dp" />
+
+</LinearLayout>

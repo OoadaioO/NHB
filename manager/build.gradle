@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+    applicationId "com.nhb.app.manager"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode getSelfDefinedVersion("code")
+        versionName getSelfDefinedVersion("name")
+    }
+    signingConfigs {
+        debug {
+            storeFile file("../nhbb.jks")
+            storePassword "nhbb12344321"
+            keyAlias "nhbb"
+            keyPassword "nhbb12344321"
+        }
+        release {
+            storeFile file("../nhbb.jks")
+            storePassword "nhbb12344321"
+            keyAlias "nhbb"
+            keyPassword "nhbb12344321"
+        }
+    }
+    buildTypes {
+//        release {
+//            minifyEnabled true
+//            multiDexEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+    }
+    lintOptions {
+        disable 'InconsistentArrays','OldTargetApi','GradleOverrides','MissingTranslation','UnusedResources','GoogleAppIndexingWarning'
+    }
+    //655xxx的方法限制分包处理
+    dexOptions {
+        javaMaxHeapSize "4g"
+        //加快编译速度
+        incremental true
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':library')
+    compile 'pub.devrel:easypermissions:0.1.7'
+    compile files('libs/GetuiSDK2.9.0.0.jar')
+    //    下拉刷新
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.6@aar'
+}
+def getSelfDefinedVersion(type) {
+    if ("code".equals(type)) {
+        Integer.parseInt(new Date().format("yyyyMMddss"))
+    } else if ("name".equals(type)) {
+        "1.1"
+    }
+}

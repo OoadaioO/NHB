@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 5.9.0 豆腐块双图模板 -->
+<LinearLayout
+    android:id="@+id/template2_ll_root"
+    style="@style/template_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/template2_tv_title"
+        style="@style/template_title" />
+
+    <!-- 宽高比750:300,左右均分 -->
+    <LinearLayout
+        android:id="@+id/template2_ll_images"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/template2_iv_imageA"
+            style="@style/template_image_horizontal_split" />
+
+        <View
+            android:id="@+id/template2_dividerVCenter"
+            style="@style/common_vertical_divider" />
+
+        <ImageView
+            android:id="@+id/template2_iv_imageB"
+            style="@style/template_image_horizontal_split" />
+    </LinearLayout>
+
+</LinearLayout>

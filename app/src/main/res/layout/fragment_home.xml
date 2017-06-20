@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?><!-- activity/fragment template -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!-- name是固定的,type为viewModel的全路径 -->
+        <variable
+            name="viewModel"
+            type="com.nhb.app.custom.viewmodel.HomeFragmentVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.nhb.app.custom.common.view.MatchListPullToRefreshScrollView
+            android:id="@+id/home_sv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/home_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <com.flyco.tablayout.SlidingTabLayout
+                        android:id="@+id/home_stl_tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/white"
+                        android:paddingLeft="28dp"
+                        android:paddingRight="14dp"
+                        tl:tl_divider_width="0dp"
+                        tl:tl_indicator_color="@color/white"
+                        tl:tl_indicator_height="0dp"
+                        tl:tl_indicator_width_equal_title="true"
+                        tl:tl_tab_padding="14dp"
+                        tl:tl_tab_space_equal="false"
+                        tl:tl_textSelectColor="@color/c_333333"
+                        tl:tl_textUnselectColor="@color/c_333333"
+                        tl:tl_textsize="@dimen/font_17" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_home_hot" />
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_below="@id/home_stl_tabs"
+                    android:background="@color/c_EEEEEE" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/home_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </com.nhb.app.custom.common.view.MatchListPullToRefreshScrollView>
+
+        <com.nhb.app.custom.common.view.LoadingStatusView
+            android:id="@+id/commonList_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/home_title"
+            layout="@layout/titlebar_search"
+            bind:viewModel="@{viewModel}" />
+    </RelativeLayout>
+</layout>

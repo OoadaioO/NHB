@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titlebarNormal_rl_content"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/titlebar_height"
+    android:background="@color/c_333333">
+
+    <ImageView
+        android:id="@+id/titlebar_showimage_iv_leftBtn"
+        android:layout_width="@dimen/titlebar_img_btn_size"
+        android:layout_height="@dimen/titlebar_img_btn_size"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_titlebar_back_white"/>
+
+    <TextView
+        android:id="@+id/titlebar_showimage_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/titlebar_img_btn_size"
+        android:layout_marginRight="@dimen/titlebar_img_btn_size"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="--"
+        android:textColor="@color/white"
+        android:textSize="14sp"/>
+
+    <ImageView
+        android:id="@+id/titlebar_showimage_iv_rightBtn"
+        android:layout_width="@dimen/titlebar_img_btn_size"
+        android:layout_height="@dimen/titlebar_img_btn_size"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerInside"
+        android:padding="10dp"
+        android:src="@drawable/sel_titlebar_btn_finish_white_style"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/titlebar_showimage_tv_rightText"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/titlebar_img_btn_size"
+        android:minWidth="@dimen/titlebar_img_btn_size"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center"
+        android:textColor="@color/titlebar_title_black"
+        android:textSize="@dimen/titlebar_text_btn_size"/>
+
+
+
+</RelativeLayout>
